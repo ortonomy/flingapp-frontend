@@ -4,4 +4,4 @@
 
 flingapp is a react.js front-end for managing an organisation's book of freelancers.
 
-It is designed to use a fling server available [here](https://github.com/ortonomy/fling-server)
+It is designed to use a fling server as a backend - available [here](https://github.com/ortonomy/fling-server)
