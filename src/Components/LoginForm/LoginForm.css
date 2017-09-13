@@ -1,0 +1,13 @@
+.LoginForm {
+    width: 90%;
+    background: rgba(255,255,255,1);
+}
+
+.LoginForm .tabs {
+    font-size: 1.5em;
+    color: #555;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
