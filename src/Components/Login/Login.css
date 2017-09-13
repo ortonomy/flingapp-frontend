@@ -1,0 +1,14 @@
+.Login {
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(to bottom, rgba(255, 221, 128, 1) 0%, rgba(251, 199, 57, 1) 100%);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.Login .login-box {
+    height: 50%;
+    background: rgba(255,255,255,0.6);
+}
