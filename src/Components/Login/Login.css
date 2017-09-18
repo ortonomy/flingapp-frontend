@@ -22,7 +22,7 @@
     flex: 2;
 }
 
-.Login .LoginForm {
+.Login .LoginNav {
     flex: 4;
 }
 
@@ -37,4 +37,33 @@
 
 .Login .login-footer * {
     padding: 0em 0.3em;
+}
+
+.Login .tabs {
+    height: 2.5em;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.Login .tabs .tab {
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #4A90E2;
+}
+
+.Login .tabs .tab.active {
+    background: rgba(255,255,255,1);
+    color: #555;
+}
+
+.Login .login-body {
+    width: 100%;
+    height: 18em;
+    background: rgba(255,255,255,1);
 }

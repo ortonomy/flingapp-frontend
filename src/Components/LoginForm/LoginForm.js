@@ -1,17 +1,32 @@
 import React, { Component } from 'react';
-import './LoginForm.css'
+import { FormControl } from 'react-bootstrap';
+import './LoginForm.css';
+
 
 class LoginForm extends Component {
+    handleChange() {
+        return 0;
+    }
+
     render() {
-        return(
-            <div className="LoginForm">
-                <div className="tabs">
-                    <span className="active">Login</span>
-                    <span>Register</span>
-                </div>
-                <div>
-                </div>
-            </div>
+        return (
+            <form className="LoginForm">
+                <FormControl
+                    className="form-element input"
+                    type="text"
+                    value=""
+                    placeholder="Email"
+                    onChange={this.handleChange}
+                 />
+                 <FormControl
+                     className="form-element input"
+                     type="text"
+                     value=""
+                     placeholder="Password"
+                     onChange={this.handleChange}
+                  />
+                <div className="form-element btn-primary">LOGIN</div>
+            </form>
         )
     }
 }
