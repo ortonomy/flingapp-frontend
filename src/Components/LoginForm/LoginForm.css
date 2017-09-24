@@ -1,25 +1,30 @@
 .LoginForm {
-    height: 90%;
+    height: 95%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;;
     flex-flow: column nowrap;
 }
 
 .LoginForm .form-element {
-    height: 2em;
+    height: 51px;
     width: 90%;
-    padding: 2em;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.LoginForm:first-child {
-    padding-top: 1em;
+    margin: 1em 0;
 }
 
 .LoginForm .form-element.input {
     background: rgba(238,238,238,0.65);
     border-radius: 0;
+    font-size: 1.25em;
+    padding: 0 1em !important;
+}
+
+.LoginForm .form-link {
+  color: #4990e2;
+  font-size: 0.8em;
+  text-align: right;
+  width: 90%;
 }

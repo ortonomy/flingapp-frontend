@@ -25,6 +25,7 @@ class LoginForm extends Component {
                      placeholder="Password"
                      onChange={this.handleChange}
                   />
+                <a className="form-link">I've forgotten my password.</a>
                 <div className="form-element btn-primary">LOGIN</div>
             </form>
         )

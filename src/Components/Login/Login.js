@@ -8,7 +8,9 @@ class Login extends Component {
         return (
             <div className="Login">
                 <div className="login-box">
-                    <img className="login-image" src={logo} alt="Fling" />
+                    <div className="login-image">
+                      <img className="login-image" src={logo} alt="Fling" />
+                    </div>
                     <LoginNav />
                     <div className="login-footer">
                         <a href="#">Terms and Conditions</a>
