@@ -41,4 +41,5 @@
 .FormInputAnimated > .container > input:focus + label {
   top: 0;
   font-size: 1em;
+  z-index: 101;
 }
