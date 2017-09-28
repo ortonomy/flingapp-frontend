@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FormControl } from 'react-bootstrap';
+import FormInputAnimated from '../FormInputAnimated/FormInputAnimated';
 import './LoginForm.css';
 
 
@@ -11,22 +11,10 @@ class LoginForm extends Component {
     render() {
         return (
             <form className="LoginForm">
-                <FormControl
-                    className="form-element input"
-                    type="text"
-                    value=""
-                    placeholder="Email"
-                    onChange={this.handleChange}
-                 />
-                 <FormControl
-                     className="form-element input"
-                     type="text"
-                     value=""
-                     placeholder="Password"
-                     onChange={this.handleChange}
-                  />
-                <a className="form-link">I've forgotten my password.</a>
-                <div className="form-element btn-primary">LOGIN</div>
+              <FormInputAnimated name="email" text="Email" />
+              <FormInputAnimated name="password" text="Password" />
+              <a className="form-link">I've forgotten my password.</a>
+              <div className="form-element btn-primary">LOGIN</div>
             </form>
         )
     }
