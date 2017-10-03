@@ -9,7 +9,7 @@
 }
 
 .Login .login-box {
-    height: 65%;
+    height: 600px;
     width: 400px;
     background: rgba(238,238,238,0.65);
     display: flex;
