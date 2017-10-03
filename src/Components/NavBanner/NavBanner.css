@@ -1,0 +1,12 @@
+.NavBanner {
+  height: 4em;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.NavBanner img {
+  max-height: 100%;
+  max-width: 100%;
+}

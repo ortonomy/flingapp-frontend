@@ -1,15 +1,17 @@
 import React from 'react';
-import Home from '../Home/Home';
+import Freelancer from '../Freelancer/Freelancer';
 import Project from '../Project/Project';
-import Login from '../Login/Login';
+import NavBar from '../NavBar/NavBar';
 import { Switch, Route } from 'react-router-dom';
 
 const Main = () => (
     <main>
+        <NavBar />
         <Switch>
-            <Route exact path='/' component={Home}/>
-            <Route path='/project' component={Project}/>
-            <Route path='/login' component={Login}/>
+            <Route path='/freelancer' component={Freelancer}/>
+            <Route path='/project'    component={Project}/>
+            <Route path='/'           component={Project}/>
+
         </Switch>
     </main>
 )
