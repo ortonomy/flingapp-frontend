@@ -4,6 +4,7 @@
 
 .InfoTable table {
   width: 100%;
+  margin: 2em;
   border-collapse: collapse;
 }
 
@@ -19,13 +20,13 @@
 }
 
 .InfoTable .info-table tr {
-  padding: 1em 3em;
-  width: 100%;
+  width: 80%;
+  margin: 10%;
   border-bottom: solid 1px gray;
 }
 
 .InfoTable .info-table tr td {
-  width: 10em;
+  width: 8em;
 }
 
 .InfoTable .info-table .table-key {
