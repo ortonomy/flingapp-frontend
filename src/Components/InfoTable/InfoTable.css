@@ -1,34 +1,42 @@
 .InfoTable  {
-  width: 100%;
+  width: 90%;
 }
 
-.InfoTable table {
-  width: 100%;
-  margin: 2em;
-  border-collapse: collapse;
+.InfoTable .info-header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .InfoTable .info-title {
-  padding-left: 1em;
   font-size: 1.3em;
   font-weight: bold;
-  text-transform: uppercase
+  text-transform: uppercase;
+  padding: 2em 0;
 }
 
-.InfoTable .info-table {
-  padding: 1em 3em;
+.InfoTable .container {
+  width: 100%;
 }
 
-.InfoTable .info-table tr {
-  width: 80%;
-  margin: 10%;
-  border-bottom: solid 1px gray;
+.InfoTable .table-row {
+  padding: 10px 0;
+  margin-left: 2em;
+  border-bottom: solid 1px #cccccc;
 }
 
-.InfoTable .info-table tr td {
-  width: 8em;
+.InfoTable .table-row .table-key-cell {
+  text-transform: uppercase;
 }
 
-.InfoTable .info-table .table-key {
-    text-transform: uppercase;
+.InfoTable .table-row .table-cell {
+  padding-left: 0px;
+}
+
+.InfoTable .info-edit {
+  font-size:0.9em;
+	font-weight: bold;
+	text-align: center;
+	color: #4990e2;
 }

@@ -3,4 +3,8 @@
   background-color: #fafafa;
   height: 100%;
   width: 95%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
 }

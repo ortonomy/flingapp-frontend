@@ -2,18 +2,31 @@ import React, { Component } from 'react';
 import InfoTable from '../InfoTable/InfoTable';
 import './FreelancerInfo.css';
 
-const info = {
+const personalInfo = {
   'first name': 'Jorge',
-  'last name': 'Brock'
+  'last name': 'Brock',
+  'location': 'United Kingdom',
+  'timezone': 'London, Lisbon ... UTC/GMT + 00:00',
+  'native speaker': 'Yes',
+  'primary language': 'US English'
 }
+
+const proInfo = {
+  'capable roles': 'Chief editor, Editor, Content developer',
+  'employment status': 'Full time',
+  'tags': ['expertise:ESP','works fast'],
+  'documents': ['freelancer_assessment.doc']
+}
+
+const experience = {}
 
 class FreelancerInfo extends Component {
   render() {
     return (
       <div className='FreelancerInfo'>
-        <InfoTable title='Personal Information' info={info}/>
-        <InfoTable title='Professional Information' info={info}/>
-        <InfoTable title='Experience' info={info}/>
+        <InfoTable title='Personal Information' info={personalInfo}/>
+        <InfoTable title='Professional Information' info={proInfo}/>
+        <InfoTable title='Experience' info={experience}/>
       </div>
     )
   }
