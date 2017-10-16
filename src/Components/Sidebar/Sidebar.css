@@ -1,5 +1,9 @@
 .Sidebar {
   width:300px;
-  height: 100vh;
+  height: 150vw;
   background: #fafafa;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
 }
