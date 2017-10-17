@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Avatar from '../Avatar/Avatar';
 import './NavBanner.css';
-import logo from '../../assets/images/full_title_compact_trans.png';
+import logo from '../../assets/images/web-title.png';
 
 class NavBanner extends Component {
   render() {
