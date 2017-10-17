@@ -7,3 +7,18 @@
   justify-content: flex-start;
   align-items: center;
 }
+
+.Sidebar > * {
+  width: 90%;
+  padding: 1em;
+}
+
+.Sidebar .sidebar-section-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  width: 100%;
+}
+
+.Sidebar .sidebar-section-title span {
+  padding: 10px;
+}

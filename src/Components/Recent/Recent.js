@@ -6,7 +6,10 @@ class Recent extends Component {
   render() {
     return (
       <div className="Recent">
-        Recently Viewed
+        <div className='sidebar-section-title'>
+          <i className='fa fa-eye'></i>
+          <span>Recently Viewed</span>
+        </div>
       </div>
     )
   }

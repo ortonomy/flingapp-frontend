@@ -5,7 +5,10 @@ class Search extends Component {
   render() {
     return (
       <div className="Search">
-        Search
+        <div className='sidebar-section-title'>
+          <i className='fa fa-search'></i>
+          <span>Search</span>
+        </div>
       </div>
     )
   }
