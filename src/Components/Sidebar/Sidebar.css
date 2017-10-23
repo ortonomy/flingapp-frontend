@@ -10,12 +10,13 @@
 
 .Sidebar > * {
   width: 90%;
-  padding: 1em;
+  padding: 2em 1em;
 }
 
 .Sidebar .sidebar-section-title {
   font-size: 1.2em;
   font-weight: bold;
+  text-transform: uppercase;
   width: 100%;
 }
 

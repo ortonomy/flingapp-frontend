@@ -10,6 +10,12 @@ class Create extends Component {
           <i className='fa fa-plus-circle'></i>
           <span>Create</span>
          </div>
+         <div className='sidebar-link'>
+            New Freelancer
+         </div>
+         <div className='sidebar-link'>
+            New Project
+         </div>
       </div>
     )
   }
