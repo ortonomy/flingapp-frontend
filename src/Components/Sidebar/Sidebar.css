@@ -1,0 +1,25 @@
+.Sidebar {
+  width:300px;
+  height: 150vw;
+  background: #fafafa;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.Sidebar > * {
+  width: 90%;
+  padding: 2em 1em;
+}
+
+.Sidebar .sidebar-section-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.Sidebar .sidebar-section-title span {
+  padding: 10px;
+}

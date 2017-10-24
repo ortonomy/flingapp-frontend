@@ -1,0 +1,12 @@
+.Tag {
+  height:26px;
+  background-color: #ffde17;
+  border-radius: 50px;
+  color: #555555;
+  display: flex;
+  padding: 0 10px 0 10px;
+  margin-right: 5px;
+  display: inline-block;
+  line-height: 26px;
+  text-align: center;
+}

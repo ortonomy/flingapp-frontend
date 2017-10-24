@@ -1,0 +1,45 @@
+.FormInputAnimated {
+  width: 100%;
+  height: 75px;
+}
+
+.FormInputAnimated > .container {
+  position: relative;
+  width: 90%;
+  height: 100%;
+  padding: 0;
+}
+
+.FormInputAnimated > .container > input {
+  position: absolute;
+  top: 25%;
+  height: 50px;
+  width: 100%;
+  background: rgba(0,0,0,0);
+  border: 0;
+  font-size: 1.5em;
+  background-color: rgba(238,238,238,0.5);
+	box-shadow: inset 0 0 3px 1px rgba(153, 153, 153, 0.3);
+  padding-left: 0.3em;
+  z-index: 100;
+}
+
+.FormInputAnimated > .container > input:valid + label{
+  top: 0;
+  font-size: 1em;
+}
+
+.FormInputAnimated > .container > label {
+  position: absolute;
+  top: 40%;
+  padding-left: 0.3em;
+  font-size: 1.5em;
+  color: gray;
+  transition: 0.7s;
+}
+
+.FormInputAnimated > .container > input:focus + label {
+  top: 0;
+  font-size: 1em;
+  z-index: 101;
+}

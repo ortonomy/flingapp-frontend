@@ -1,0 +1,42 @@
+.InfoTable  {
+  width: 90%;
+}
+
+.InfoTable .info-header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.InfoTable .info-title {
+  font-size: 1.3em;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 2em 0;
+}
+
+.InfoTable .container {
+  width: 100%;
+}
+
+.InfoTable .table-row {
+  padding: 10px 0;
+  margin-left: 2em;
+  border-bottom: solid 1px #cccccc;
+}
+
+.InfoTable .table-row .table-key-cell {
+  text-transform: uppercase;
+}
+
+.InfoTable .table-row .table-cell {
+  padding-left: 0px;
+}
+
+.InfoTable .info-edit {
+  font-size:0.9em;
+	font-weight: bold;
+	text-align: center;
+	color: #4990e2;
+}

@@ -1,0 +1,23 @@
+.NavMenu {
+  background: #333;
+  height: 4em;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.NavMenu .nav-menu-item {
+  height: 100%;
+  width: 13em;
+  text-transform: uppercase;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.NavMenu .nav-menu-item.active {
+  background: #FFDE17;
+  color: black;
+}
