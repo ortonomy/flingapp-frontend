@@ -1,0 +1,13 @@
+.Recent .recent-container {
+  padding: 1em 0;
+}
+
+.Recent .recent-container > i {
+  color: #ffde17;
+  font-size: 16px;
+}
+
+.Recent .recent-container span {
+  text-transform: uppercase;
+  padding-left: 0.5em;
+}
