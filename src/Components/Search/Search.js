@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './Search.css';
+import search from './Search.module.css';
+import sidebar from '../Sidebar/Sidebar.module.css';
 
 class Search extends Component {
 
@@ -9,12 +10,12 @@ class Search extends Component {
 
   render() {
     return (
-      <div className="Search">
-        <div className='sidebar-section-title'>
+      <div className={search.Search}>
+        <div className={sidebar.sectionTitle}>
           <i className='fa fa-search'></i>
           <span>Search</span>
         </div>
-        <div className="search-box">
+        <div className={search.box}>
           <input type="text" onClick={this.search} placeholder="find projects and freelancers" />
         </div>
       </div>

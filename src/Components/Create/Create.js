@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
-import './Create.css';
+import styles from './Create.module.css';
 
 
 class Create extends Component {
   render() {
     return (
-      <div className="Create">
-        <div className='sidebar-section-title'>
+      <div className={styles.Create}>
+        <div className={styles.sectionTitle}>
           <i className='fa fa-plus-circle'></i>
           <span>Create</span>
          </div>
-         <div className='sidebar-link'>
+         <div className={styles.link}>
             New Freelancer
          </div>
-         <div className='sidebar-link'>
+         <div className={styles.link}>
             New Project
          </div>
       </div>

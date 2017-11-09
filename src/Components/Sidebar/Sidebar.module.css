@@ -8,7 +8,7 @@
   align-items: center;
 }
 
-.Sidebar > * {
+.paddedBox {
   width: 90%;
   padding: 2em 1em;
 }

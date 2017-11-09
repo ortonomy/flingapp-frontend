@@ -1,0 +1,15 @@
+.Create {
+  composes: paddedBox from '../Sidebar/Sidebar.module.css';
+}
+
+.link {
+  color: #4990e2;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  font-weight: bold;
+  padding-top: 2em;
+}
+
+.sectionTitle {
+  composes: sectionTitle from '../Sidebar/Sidebar.module.css';
+}
