@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Jumbotron, Button } from 'react-bootstrap';
-import './Home.css'
+import home from './Home.module.css'
 
 class Home extends Component {
     render() {
         return(
-            <div className="Home">
+            <div className={home.Home}>
                 <Jumbotron>
                     <h1>Hello everyone!</h1>
                     <Button bsStyle="primary">Click me!</Button>
