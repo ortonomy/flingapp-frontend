@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import Sidebar from '../Sidebar/Sidebar';
 import FreelancerBody from '../FreelancerBody/FreelancerBody';
-import './Freelancer.css';
+import freelancer from './Freelancer.module.css';
 
 class Freelancer extends Component {
   render() {
     return (
-      <div className="Freelancer">
+      <div className={freelancer.Freelancer}>
         <Sidebar />
         <FreelancerBody />
       </div>
