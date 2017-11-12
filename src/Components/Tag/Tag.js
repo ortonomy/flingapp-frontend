@@ -1,9 +1,9 @@
 import React from 'react'
-import './Tag.css'
+import tag from './Tag.module.css'
 
 const Tag = (props) => {
   return (
-    <div className='Tag'>
+    <div className={tag.Tag}>
       {props.name}
     </div>
   )
