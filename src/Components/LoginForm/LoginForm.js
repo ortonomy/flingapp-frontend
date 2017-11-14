@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import FormInputAnimated from '../FormInputAnimated/FormInputAnimated';
 import Feedback from '../Feedback/Feedback';
-import './LoginForm.css';
+import form from './LoginForm.module.css';
 
 
 class LoginForm extends Component {
@@ -11,13 +11,13 @@ class LoginForm extends Component {
 
     render() {
         return (
-            <form className="LoginForm">
+            <form className={form.LoginForm}>
               <FormInputAnimated name="email" text="Email" />
               <Feedback message=""/>
               <FormInputAnimated name="password" text="Password" />
               <Feedback message=""/>
-              <a className="form-link">I've forgotten my password.</a>
-              <div className="form-element btn-primary">LOGIN</div>
+              <a className={form.link}>I've forgotten my password.</a>
+              <div className={form.element}>LOGIN</div>
             </form>
         )
     }
