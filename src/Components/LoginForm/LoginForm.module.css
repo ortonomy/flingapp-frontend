@@ -32,3 +32,12 @@
 .LoginForm .input-group {
   width: 100%;
 }
+
+.button {
+  composes: element;
+  font-size: 1.1em;
+	font-weight: bold;
+	text-align: center;
+	color: #eeeeee;
+  background-color: #4990e2;
+}

@@ -11,7 +11,7 @@ class Login extends Component {
                     <div className={login.image}>
                       <img src={logo} alt="Fling" />
                     </div>
-                    <LoginNav className={login.nav}/>
+                    <LoginNav />
                     <div className={login.footer}>
                         <a href="#">Terms and Conditions</a>
                         |

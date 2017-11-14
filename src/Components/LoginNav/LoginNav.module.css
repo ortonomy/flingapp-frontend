@@ -1,5 +1,6 @@
 .LoginNav {
     width: 85%;
+    flex: 5;
 }
 
 .tabs {

@@ -17,7 +17,7 @@ class LoginForm extends Component {
               <FormInputAnimated name="password" text="Password" />
               <Feedback message=""/>
               <a className={form.link}>I've forgotten my password.</a>
-              <div className={form.element}>LOGIN</div>
+              <div className={form.button}>LOGIN</div>
             </form>
         )
     }
