@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import Search from '../Search/Search'
 import Create from '../Create/Create'
 import Recent from '../Recent/Recent'
-import './Sidebar.css';
+import styles from './Sidebar.module.css';
 
 
 class Sidebar extends Component {
   render() {
     return (
-      <div className="Sidebar">
+      <div className={styles.Sidebar}>
         <Search />
         <Create />
         <Recent />

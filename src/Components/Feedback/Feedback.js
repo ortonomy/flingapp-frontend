@@ -1,11 +1,11 @@
 import React from 'react';
-import './Feedback.css';
+import feedback from './Feedback.module.css';
 
 
 function Feedback (props)  {
   return(
-    <div className="Feedback">
-      <div className="content">{props.message}</div>
+    <div className={feedback.Feedback}>
+      <div className={feedback.content}>{props.message}</div>
     </div>
   )
 }

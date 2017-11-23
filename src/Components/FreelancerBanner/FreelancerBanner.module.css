@@ -9,7 +9,7 @@
   align-items: flex-start;
 }
 
-.FreelancerBanner .banner-text {
+.text {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -22,13 +22,13 @@
   font-size: 3em;
 }
 
-.FreelancerBanner .freelancer-title {
+.title {
   font-size: 1.3em;
   margin-top: 0.5em;
   text-transform: uppercase;
 }
 
-.FreelancerBanner .freelancer-status {
+.status {
   width: 6em;
 	height: 2em;
 	border-radius: 4px;
@@ -40,6 +40,7 @@
   justify-content: center;
 }
 
-.FreelancerBanner .freelancer-status.active {
+.active {
+  composes: status;
   background-color: #81d135;
 }

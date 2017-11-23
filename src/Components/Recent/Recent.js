@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import RecentItem from '../RecentItem/RecentItem';
-import './Recent.css';
+import recent from './Recent.module.css';
+import sidebar from '../Sidebar/Sidebar.module.css';
 
 const recentFreelancers = [{
   name: 'Jorge Brock',
@@ -39,17 +40,17 @@ class Recent extends Component {
     }
 
     return (
-      <div className="Recent">
-        <div className='sidebar-section-title'>
+      <div className={recent.Recent}>
+        <div className={sidebar.title}>
           <i className='fa fa-eye'></i>
           <span>Recently Viewed</span>
         </div>
-        <div className='recent-container'>
+        <div className={recent.container}>
           <i className="fa fa-users" aria-hidden="true"></i>
           <span>Freelancers</span>
           {freelancers}
         </div>
-        <div className='recent-container'>
+        <div className={recent.container}>
           <i className="fa fa-sticky-note" aria-hidden="true"></i>
           <span>Projects</span>
           {projects}

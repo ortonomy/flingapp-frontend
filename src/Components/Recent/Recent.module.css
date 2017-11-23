@@ -1,0 +1,18 @@
+.Recent {
+  composes: paddedBox from '../Sidebar/Sidebar.module.css';
+}
+
+
+.container {
+  padding: 1em 0;
+}
+
+.container > i {
+  color: #ffde17;
+  font-size: 16px;
+}
+
+.container span {
+  text-transform: uppercase;
+  padding-left: 0.5em;
+}

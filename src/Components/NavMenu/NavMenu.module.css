@@ -7,7 +7,7 @@
   align-items: center;
 }
 
-.NavMenu .nav-menu-item {
+.item {
   height: 100%;
   width: 13em;
   text-transform: uppercase;
@@ -17,7 +17,8 @@
   align-items: center;
 }
 
-.NavMenu .nav-menu-item.active {
+.active {
+  composes: item;
   background: #FFDE17;
   color: black;
 }

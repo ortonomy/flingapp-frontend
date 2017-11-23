@@ -8,7 +8,7 @@
     align-items: center;
 }
 
-.Login .login-box {
+.box {
     height: 600px;
     width: 400px;
     background: rgba(238,238,238,0.65);
@@ -18,7 +18,7 @@
     justify-content: space-around;
 }
 
-.Login .login-image {
+.image {
     flex: 2;
     display: flex;
     flex-flow: column nowrap;
@@ -26,11 +26,11 @@
     justify-content: center;
 }
 
-.Login .LoginNav {
+.nav {
     flex: 5;
 }
 
-.Login .login-footer {
+.footer {
     flex:1;
     color: #4A90E2;
     display: flex;
@@ -39,19 +39,11 @@
     align-items: center;
 }
 
-.Login .login-footer * {
+.footer * {
     padding: 0em 0.3em;
 }
 
-.Login .tabs {
-    height: 2.5em;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
-}
-
-.Login .tabs .tab {
+.tab {
     width: 50%;
     height: 100%;
     text-align: center;
@@ -61,12 +53,13 @@
     color: #4A90E2;
 }
 
-.Login .tabs .tab.active {
+.active {
+    composes: tab;
     background: rgba(255,255,255,1);
     color: #555;
 }
 
-.Login .login-body {
+.body {
     width: 100%;
     height: 85%;
     background: rgba(255,255,255,1);

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import './NavMenu.css';
+import menu from './NavMenu.module.css';
 
 class NavMenu extends Component {
   render() {
     return (
-      <div className="NavMenu">
-        <div className="active nav-menu-item">Freelancers</div>
-        <div className="nav-menu-item">Projects</div>
+      <div className={menu.NavMenu}>
+        <div className={menu.active}>Freelancers</div>
+        <div className={menu.item}>Projects</div>
       </div>
     )
   }

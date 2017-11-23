@@ -1,12 +1,14 @@
 .LoginNav {
     width: 85%;
+    flex: 5;
 }
 
-.LoginNav .tabs {
+.tabs {
     font-size: 1.5em;
     color: #555;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
+    height: 2.5em;
 }

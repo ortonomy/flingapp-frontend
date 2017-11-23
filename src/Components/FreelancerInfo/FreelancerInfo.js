@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import InfoTable from '../InfoTable/InfoTable';
-import './FreelancerInfo.css';
+import info from './FreelancerInfo.module.css';
 
 const personalInfo = {
   'first name': 'Jorge',
@@ -23,7 +23,7 @@ const experience = {}
 class FreelancerInfo extends Component {
   render() {
     return (
-      <div className='FreelancerInfo'>
+      <div className={info.FreelancerInfo}>
         <InfoTable title='Personal Information' info={personalInfo}/>
         <InfoTable title='Professional Information' info={proInfo}/>
         <InfoTable title='Experience' info={experience}/>
