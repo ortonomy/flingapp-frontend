@@ -13,6 +13,10 @@ export const actionTypes = {
 };
 
 // action creators
+export const appResetState = () => ({
+  type: APP_RESET_STATE
+});
+
 export const appUpdate = value => ({
   type: APP_UPDATE, 
   payload: value 
@@ -31,6 +35,7 @@ export const appUpdateFail = err => ({
 
 // all action creators
 export const actions = {
+  appResetState,
   appUpdate,
   appUpdateSuccess,
   appUpdateFail

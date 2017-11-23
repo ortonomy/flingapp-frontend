@@ -1,14 +1,12 @@
 // initial state
-const initialState = {
-  global: null
-}
+const initialState = {}
 
 export default function reducer(state = initialState, action) {
   switch(action.type) {
     case 'APP_UPDATE_SUCCESS': {
       return {
         ...state,
-        global: action.payload,
+        default: action.payload,
       };
     }
     case 'APP_RESET_STATE': {

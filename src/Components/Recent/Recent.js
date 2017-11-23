@@ -32,11 +32,11 @@ class Recent extends Component {
     const freelancers = []
 
     for (let f of recentFreelancers) {
-      freelancers.push(<RecentItem icon='user' displayText={f.name} linkTarget={f.url} />)
+      freelancers.push(<RecentItem key={f.name} icon='user' displayText={f.name} linkTarget={f.url} />)
     }
 
     for (let p of recentProjects) {
-      projects.push(<RecentItem icon='folder-o' displayText={p.name} linkTarget={p.url} />)
+      projects.push(<RecentItem key={p.name} icon='folder-o' displayText={p.name} linkTarget={p.url} />)
     }
 
     return (

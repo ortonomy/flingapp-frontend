@@ -24,7 +24,7 @@ export const appLogic = createLogic({
     // .then ( () => {
     //   done() 
     // })
-    dispatch(actions.appUpdateSuccess('test update'));
+    dispatch(actions.appUpdateSuccess(action.payload));
     done();
   }
 });
