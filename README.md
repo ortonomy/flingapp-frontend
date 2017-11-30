@@ -5,3 +5,8 @@
 flingapp is a react.js front-end for managing an organisation's book of freelancers.
 
 It is designed to use a fling server as a backend - available [here](https://github.com/ortonomy/fling-server)
+
+``master`` branch will be future production app
+``development`` branch is obvious development. write your feature branches off of development
+
+We'll regularly pull development into master for new release
