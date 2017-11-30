@@ -1,6 +1,5 @@
 // basic react imports
 import React, { Component } from 'react';
-import Main from '../../components/Main/Main';
 
 // redux 
 import { connect } from 'react-redux';
@@ -11,6 +10,7 @@ import { Switch, Route } from 'react-router-dom';
 
 // user components
 import Login from '../../components/Login/Login';
+import Main from '../../components/Main/Main';
 
 // styles
 import styles from './App.module.css';
