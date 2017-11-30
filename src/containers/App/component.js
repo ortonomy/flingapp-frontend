@@ -6,9 +6,11 @@ import Main from '../../components/Main/Main';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+// routing 
+import { Switch, Route } from 'react-router-dom';
+
 // user components
 import Login from '../../components/Login/Login';
-import { Switch, Route } from 'react-router-dom';
 
 // styles
 import styles from './App.module.css';
