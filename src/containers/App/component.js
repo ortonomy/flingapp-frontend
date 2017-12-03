@@ -10,7 +10,7 @@ import { Switch, Route } from 'react-router-dom';
 
 // user components
 import Login from '../../components/Login/Login';
-import Main from '../../components/Main/Main';
+import { Landing } from '../../containers/Landing';
 
 // styles
 import styles from './App.module.css';
@@ -40,7 +40,7 @@ class App extends Component {
         <div className={styles.App}>
           <Switch>
             <Route path="/login" component={Login}/>
-            <Route path="/"      component={Main}/>
+            <Route path="/"      component={Landing}/>
           </Switch>
         </div>
     );

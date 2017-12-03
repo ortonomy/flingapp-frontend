@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('assets/fonts/pnr.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova Bold';
+  src: url('assets/fonts/pnb.otf');
+  font-weight: bold;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   padding: 0;
