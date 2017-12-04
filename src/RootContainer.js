@@ -10,9 +10,6 @@ import { createLogicMiddleware } from 'redux-logic';
 import { default as rootLogic } from './logic'
 import { default as rootReducer } from './reducers';
 
-// routing 
-import { BrowserRouter } from 'react-router-dom';
-
 // components
 import { App } from './containers/App';
 
@@ -42,9 +39,7 @@ const store = configureStore(initialState); // call the store configuration
 const RootContainer = (props) => {
   return (
     <Provider store={store}>
-      <BrowserRouter>
         <App />
-      </BrowserRouter>
     </Provider>
   );
 }

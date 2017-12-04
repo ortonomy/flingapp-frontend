@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 // routing 
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 
 // user components
 import Login from '../../components/Login/Login';
@@ -35,14 +35,15 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.props.state);
     return (
         <div className={styles.App}>
-          <Switch>
-            <Route path="/login" component={Login}/>
-            <Route path="/register" component={Login}/>
-            <Route path="/"      component={Landing}/>
-          </Switch>
+          <Router>
+            <Switch>
+              <Route path="/login" component={Login}/>
+              <Route path="/register" component={Login}/>
+              <Route path="/"      component={Landing}/>
+            </Switch>
+          </Router>
         </div>
     );
   }
