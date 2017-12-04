@@ -28,8 +28,7 @@ const LandingHero = (props) => {
         </div>
       </div>
       <div className={styles.LandingHeroRight}>
-      </div>
-      
+      </div> 
     </div>
   )
 }

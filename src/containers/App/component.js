@@ -40,6 +40,7 @@ class App extends Component {
         <div className={styles.App}>
           <Switch>
             <Route path="/login" component={Login}/>
+            <Route path="/register" component={Login}/>
             <Route path="/"      component={Landing}/>
           </Switch>
         </div>

@@ -1,11 +1,14 @@
 // basic react imports
 import React from 'react';
 
-// styles
-import styles from './LandingNav.module.css';
+// library imports
+import { Link } from 'react-router-dom';
 
 // dependent components
 import LandingButton from './LandingButton';
+
+// styles
+import styles from './LandingNav.module.css';
 
 // assets
 import WebTitle from '../../assets/images/web-title@svg.svg';
@@ -15,8 +18,8 @@ const LandingNav = (props) => {
     <div className={styles.NavBar}>
       <img className={styles.NavBarLogo} src={WebTitle} alt='small logo' />
       <div className={styles.NavBarNavItems}>
-        <div><span>Register</span></div>
-        <div><span>Log in</span></div>
+        <div><Link to="/register"><span>Register</span></Link></div>
+        <div><Link to="/login"><span>Log in</span></Link></div>
       </div>
     </div>
   )
