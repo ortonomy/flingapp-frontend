@@ -24,6 +24,7 @@ const LandingHero = (props) => {
             size='cta'
             color='blue'
             icon='fa-rocket'
+            link="/register"
           />
         </div>
       </div>
