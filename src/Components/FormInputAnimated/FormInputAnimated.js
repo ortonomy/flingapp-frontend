@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 
 // dependent components
-import FormFeedback from '../Feedback';
+import FormFeedback from '../FormFeedback';
 
 // validation messages
 import * as Validation from './Validation';
