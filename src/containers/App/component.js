@@ -9,8 +9,8 @@ import { bindActionCreators } from 'redux';
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 
 // user components
-import { Login } from '../Login';
-import { Landing } from '../Landing';
+import Login from '../../components/Login/Login';
+import { Landing } from '../../containers/Landing';
 
 // styles
 import styles from './App.module.css';
