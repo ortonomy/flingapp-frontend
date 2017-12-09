@@ -1,0 +1,24 @@
+.LoginTab {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  height: 4.3rem;
+}
+
+.LoginTabActive {
+  background-color: #FFF;
+  font-family: 'Proxima Nova';
+}
+
+.TabLink {
+  display: inline-block;
+  height: 2.9rem;
+  width: 100%;
+  text-align: center;
+}
+
+.TabLinkActive, .TabLinkActive:hover, .TabLinkActive:active, .TabLinkActive:focus, .TabLinkActive:visited {
+  text-decoration: none;
+  color: #555;
+}

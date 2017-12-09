@@ -4,9 +4,6 @@ import React from 'react';
 // library imports
 import { Link } from 'react-router-dom';
 
-// dependent components
-import LandingButton from './LandingButton';
-
 // styles
 import styles from './LandingNav.module.css';
 

@@ -1,43 +1,14 @@
 .LoginForm {
-    height: 95%;
-    display: flex;
-    align-items: center;
-    justify-content: center;;
-    flex-flow: column nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+  padding: 15px 0 25px 0;
 }
 
-.element {
-    height: 50px;
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1em 0;
-}
-
-.element.input {
-    background: rgba(238,238,238,0.65);
-    border-radius: 0;
-    font-size: 1.25em;
-    padding: 0 1em !important;
-}
-
-.link {
-  color: #4990e2;
-  font-size: 0.8em;
+.Forgot {
+  width: calc(100% - 50px);
+  margin: 0 0 15px 0;
+  font-size: 1.2rem;
   text-align: right;
-  width: 90%;
-}
-
-.LoginForm .input-group {
-  width: 100%;
-}
-
-.button {
-  composes: element;
-  font-size: 1.1em;
-	font-weight: bold;
-	text-align: center;
-	color: #eeeeee;
-  background-color: #4990e2;
 }
