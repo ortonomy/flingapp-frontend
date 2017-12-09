@@ -1,9 +1,6 @@
 // react
 import React, { Component } from 'react';
 
-// library components
-import { Link } from 'react-router-dom';
-
 // dependent components
 import FormInputAnimated from '../FormInputAnimated/FormInputAnimated';
 import FormButton from '../FormButton';
