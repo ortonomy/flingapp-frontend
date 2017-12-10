@@ -11,14 +11,15 @@
   height: 100%;
   width: 13em;
   text-transform: uppercase;
-  color: white;
+  color: white !important;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none !important;
 }
 
 .active {
   composes: item;
   background: #FFDE17;
-  color: black;
+  color: black !important;
 }

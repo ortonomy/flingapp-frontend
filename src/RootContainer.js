@@ -15,7 +15,7 @@ import { App } from './containers/App';
 
 
 // configure injected dependencies for redux-logic
-const deps = { 
+const deps = {
   createAction: function(type, payload) {
     return {
       type,

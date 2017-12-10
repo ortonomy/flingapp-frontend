@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import UserIsAuthenticated from '../Auth/UserIsAuthenticated';
 
+@UserIsAuthenticated
 class Project extends Component {
     render() {
         return(

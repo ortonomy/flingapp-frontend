@@ -11,6 +11,7 @@ import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 // user components
 import { Login } from '../Login';
 import { Main } from '../Main';
+import { Landing } from '../Landing';
 
 // styles
 import styles from './App.module.css';
@@ -41,6 +42,7 @@ class App extends Component {
             <Switch>
               <Route path="/login" component={Login}/>
               <Route path="/register" component={Login}/>
+              <Route path="/landing" component={Landing}/>
               <Route path="/"      component={Main}/>
             </Switch>
           </Router>
