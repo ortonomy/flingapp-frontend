@@ -25,7 +25,7 @@ const InfoTable = (props) => {
         <div className={table.title}>{props.title}</div>
         <div className={table.edit}>EDIT DETAILS</div>
       </div>
-      <Grid>
+      <Grid fluid={true}>
         {tableData}
       </Grid>
     </div>

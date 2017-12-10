@@ -41,7 +41,7 @@ class Recent extends Component {
 
     return (
       <div className={recent.Recent}>
-        <div className={sidebar.title}>
+        <div className={recent.sectionTitle}>
           <i className='fa fa-eye'></i>
           <span>Recently Viewed</span>
         </div>

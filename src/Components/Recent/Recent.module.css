@@ -2,6 +2,9 @@
   composes: paddedBox from '../Sidebar/Sidebar.module.css';
 }
 
+.sectionTitle {
+  composes: sectionTitle from '../Sidebar/Sidebar.module.css';
+}
 
 .container {
   padding: 1em 0;

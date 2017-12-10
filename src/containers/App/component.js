@@ -1,16 +1,16 @@
 // basic react imports
 import React, { Component } from 'react';
 
-// redux 
+// redux
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-// routing 
+// routing
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 
 // user components
 import { Login } from '../Login';
-import { Landing } from '../Landing';
+import { Main } from '../Main';
 
 // styles
 import styles from './App.module.css';
@@ -41,7 +41,7 @@ class App extends Component {
             <Switch>
               <Route path="/login" component={Login}/>
               <Route path="/register" component={Login}/>
-              <Route path="/"      component={Landing}/>
+              <Route path="/"      component={Main}/>
             </Switch>
           </Router>
         </div>
