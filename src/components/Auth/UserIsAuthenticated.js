@@ -4,7 +4,7 @@ const UserIsAuthenticated = connectedRouterRedirect({
   redirectPath: '/landing',
   authenticatedSelector: state => {
     console.log(state.App.user)
-    return state.App.user !== undefined
+    return state.App.user === undefined
   },
   wrapperDisplayName: 'UserIsAuthenticated'
 })
