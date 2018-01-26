@@ -1,9 +1,10 @@
-// basic react imports
+// react
 import React, { Component } from 'react';
 
-// user components
+// component dependencies
 import * as LandingStatic from '../../components/LandingStatic';
 const { LandingNav, LandingHero } = LandingStatic;
+
 
 class Landing extends Component {
   render () {

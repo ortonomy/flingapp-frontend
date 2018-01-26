@@ -1,8 +1,17 @@
+// react
 import React from 'react';
+
+// library dependencies
+import { Switch, Route } from 'react-router-dom';
+
+// component dependencies
+import withLogin from '../../containers/Auth/withLogin';
+import withActivation from '../../containers/Auth/withActivation';
 import Freelancer from '../Freelancer/Freelancer';
 import Project from '../Project/Project';
 import NavBar from '../NavBar/NavBar';
-import { Switch, Route } from 'react-router-dom';
+
+
 
 const Main = () => (
     <main>
@@ -11,9 +20,8 @@ const Main = () => (
             <Route path='/freelancer' component={Freelancer}/>
             <Route path='/project'    component={Project}/>
             <Route path='/'           component={Freelancer}/>
-
         </Switch>
     </main>
 )
 
-export default Main;
+export default withLogin(withActivation(Main));

@@ -1,14 +1,17 @@
 // react
 import React, { Component } from 'react';
 
-// dependent components
+// component dependencies
 import FormFeedback from '../FormFeedback';
 
-// validation messages
+// validation checking for different input types
 import * as Validation from './Validation';
 
 // styles
 import styles from './FormInputAnimated.module.css';
+
+// debug
+import Debug from '../../utils/Debug';
 
 class FormInputAnimated extends Component {
   constructor (props) {
@@ -28,6 +31,7 @@ class FormInputAnimated extends Component {
       }
       return start;
     },[]);
+    Debug.log('[validate] of <FormInputAnimated />', validationState);
     if ( validationState.length !== 0 ) {
       this.setState({ feedback: {type: 'error', message: Validation[type][validationState[0]] }});
       this.props.passValue(null, false);
@@ -41,20 +45,20 @@ class FormInputAnimated extends Component {
   }
 
   handleChange(e) {
+    Debug.log('[handleChange] of <FormInputAnimated />', e.target.value);
+    this.validate(e.target.validity, this.props.type, e.target.value);
     if ( e.target.value ) {
       e.target.parentNode.childNodes[1].classList.add(styles.hasText);
-      this.validate(e.target.validity, this.props.type, e.target.value);
       return;
     }
     e.target.parentNode.childNodes[1].classList.remove(styles.hasText);
-    this.feedback = null;
   }
 
   render() {
     return (
       <div className={styles.FormInputAnimated}>
         <div className={styles.FormElements}>
-          <input onChange={this.handleChange} name={this.props.name} type={this.props.type} minLength={this.props.type === 'password' ? '8' : ''} pattern={Validation[this.props.type].pattern}  required />
+          <input onInput={this.handleChange} name={this.props.name} type={this.props.type} minLength={this.props.type === 'password' ? '8' : '1'} pattern={Validation[this.props.type].pattern}  required />
           <label htmlFor={this.props.name}>{this.props.text}</label>
         </div>
         <div className={styles.Feedback}>

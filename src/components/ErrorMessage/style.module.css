@@ -1,16 +1,15 @@
+.ErrorMessage {
+  width: 100%;
+}
+
 .Feedback {
   font-size: 1.2rem;
   font-family: 'Proxima Nova Light';
-  padding: 0 0 0 .7rem;
+  padding-left: .7rem;
   text-align: left;
 }
 
 .error {
   color: white;
   background-color: #ff2742;
-}
-
-.info {
-  color: white;
-  background-color: #0395ED;
 }

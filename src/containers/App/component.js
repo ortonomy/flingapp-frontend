@@ -1,50 +1,41 @@
-// basic react imports
+// react
 import React, { Component } from 'react';
 
-// redux 
+// library dependencies
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-
-// routing 
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 
-// user components
+// component dependencies
 import { Login } from '../Login';
 import { Landing } from '../Landing';
+import Activate from '../Activate';
+import Main from '../../components/Main/Main.js';
+import LogOutRedirect from '../Auth/LogOutRedirect';
 
-// styles
-import styles from './App.module.css';
-
-// actions
-import { actions  } from './actions';
-const { appUpdate } = actions;
-
+//debug 
+import Debug from '../../utils/Debug';
 
 @connect(
   state => ({
     state: state
   }),
-  dispatch => ({
-    appUpdate: bindActionCreators(appUpdate, dispatch)
-  })
+  null
 )
 class App extends Component {
-
-  componentDidMount() {
-    this.props.appUpdate('This is a test');
-  }
-
   render() {
+    Debug.log('[render] of <App>: ', this.props.state);
     return (
-        <div className={styles.App}>
-          <Router>
-            <Switch>
-              <Route path="/login" component={Login}/>
-              <Route path="/register" component={Login}/>
-              <Route path="/"      component={Landing}/>
-            </Switch>
-          </Router>
-        </div>
+      <Router>
+        <Switch>
+          <Route path="/main" component={Main}/>
+          <Route path="/activate" component={Activate} />
+          <Route path="/login" component={Login}/>
+          <Route path="/register" component={Login}/>
+          <Route path="/activation" component={Login}/>
+          <Route path="/logout" component={LogOutRedirect}/>
+          <Route path="/" component={Landing}/>
+        </Switch>
+      </Router>
     );
   }
 }

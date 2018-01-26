@@ -4,6 +4,18 @@
   justify-content: center;
   flex-flow: column nowrap;
   padding: 15px 0 25px 0;
+  width: 100%;
+}
+
+.Element {
+  font-size: 1.8rem;
+  font-family: 'Proxima Nova Light';
+  padding: 2.7rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .Forgot {
@@ -11,4 +23,8 @@
   margin: 0 0 15px 0;
   font-size: 1.2rem;
   text-align: right;
+}
+
+.ErrorBox {
+  width: calc(100% - 50px);
 }

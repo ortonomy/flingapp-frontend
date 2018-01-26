@@ -4,6 +4,7 @@
   justify-content: center;
   flex-flow: column nowrap;
   padding: 15px 0 25px 0;
+  width: 100%;
 }
 
 .element {
@@ -40,4 +41,8 @@
   text-align: center;
   color: #eeeeee;
   background-color: #4990e2;
+}
+
+.ErrorBox {
+  width: calc(100% - 50px);
 }

@@ -25,7 +25,18 @@
   padding: 0 15px;
   z-index: 100;
   font-family: 'Proxima Nova Bold';
+
 }
+
+/* this is a css hack to remove yellow highlighting in input boxes in Chrome for autocomplete. */
+.FormInputAnimated > .FormElements > input:-webkit-autofill,
+.FormInputAnimated > .FormElements > input:-webkit-autofill:hover,
+.FormInputAnimated > .FormElements > input:-webkit-autofill:focus,
+.FormInputAnimated > .FormElements > input:-webkit-autofill:active {
+  -webkit-transition-delay: 9999s;
+  -webkit-transition: color 9999s ease-out, background-color 9999s ease-out;
+}
+
 
 .hasText {
   font-family: 'Proxima Nova Light' !important;
