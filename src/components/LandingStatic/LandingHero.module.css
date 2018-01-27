@@ -1,0 +1,56 @@
+.LandingHero {
+  min-height: 600px;
+  background-color: #FBC739;
+  display: flex;
+}
+
+.LandingHeroLeft, .LandingHeroRight {
+  width: 50%;
+  color: #333;
+  padding: 50px 70px;
+}
+
+.LandingHeroLeft h1 {
+  font-size: 48px;
+  font-family: 'Proxima Nova Bold';
+  font-weight: bold;
+}
+
+.LandingHeroLeft p {
+  font-size: 20px;
+  line-height: 36px;
+  font-family: 'Proxima Nova';
+  padding-top: 20px;
+}
+
+.LandingHeroRight {
+  background-image: url(../../assets/images/freelancers.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 600px 600px;
+}
+
+.LandingHeroCTA {
+  padding: 30px 0;
+}
+
+@media screen and (max-width: 740px) {
+  .LandingHeroRight {
+    display: none;
+  }
+
+  .LandingHeroLeft {
+    padding: 50px 40px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .LandingHeroLeft h1 {
+    font-size: 36px;
+  }
+
+  .LandingHeroLeft p {
+    font-size: 14px;
+  }
+}

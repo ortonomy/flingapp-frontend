@@ -1,0 +1,47 @@
+.Activate {
+    min-height: 100vh;
+    min-width: 100vw;
+    background: linear-gradient(to bottom, rgba(255, 221, 128, 1) 0%, rgba(251, 199, 57, 1) 100%);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.Content {
+    width: 400px;
+    background: rgba(238,238,238,0.5);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.Image {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    margin: 22px 0;
+}
+
+
+.Body {
+    background: rgba(255,255,255,1);
+    display: flex;
+    justify-content: center;
+    margin: 0 30px 30px 30px;
+    width: calc(100% - 60px);
+    padding: 2rem 0 1rem 0; 
+}
+
+.ActivateContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(100% - 50px);
+}
+
+.Element {
+  font-size: 1.8rem;
+  font-family: 'Proxima Nova Light';
+}

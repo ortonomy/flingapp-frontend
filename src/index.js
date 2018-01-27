@@ -1,23 +1,33 @@
 // create-react-app default
 import registerServiceWorker from './registerServiceWorker';
 
-// basic react
+// react
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+// library dependencies
+import * as Redux from './utils/Redux';
+
 // custom components
 import RootContainer from './RootContainer';
-
-// top level router
-import { BrowserRouter } from 'react-router-dom';
 
 // global styles
 import './index.css';
 import 'font-awesome/css/font-awesome.min.css';
 
-ReactDOM.render(
-  (<RootContainer />),
-  document.getElementById('root')
-);
+const initialRender = async () => {
+  const newStore = await Redux.configureStore();
+  ReactDOM.render(
+    (<RootContainer store={newStore} />),
+    document.getElementById('root')
+  );
 
-registerServiceWorker();
+  registerServiceWorker();
+}
+
+initialRender();
+
+
+
+
+

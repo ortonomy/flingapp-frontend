@@ -1,46 +1,41 @@
-// basic react imports
+// react
 import React, { Component } from 'react';
-import Main from '../../components/Main/Main';
 
-// redux 
+// library dependencies
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 
-// user components
-import Login from '../../components/Login/Login';
-import { Switch, Route } from 'react-router-dom';
+// component dependencies
+import { Login } from '../Login';
+import { Landing } from '../Landing';
+import Activate from '../Activate';
+import Main from '../../components/Main/Main.js';
+import LogOutRedirect from '../Auth/LogOutRedirect';
 
-// styles
-import styles from './App.module.css';
-
-// actions
-import { actions  } from './actions';
-const { appUpdate } = actions;
-
+//debug 
+import Debug from '../../utils/Debug';
 
 @connect(
   state => ({
     state: state
   }),
-  dispatch => ({
-    appUpdate: bindActionCreators(appUpdate, dispatch)
-  })
+  null
 )
 class App extends Component {
-
-  componentDidMount() {
-    this.props.appUpdate('This is a test');
-  }
-
   render() {
-    console.log(this.props.state);
+    Debug.log('[render] of <App>: ', this.props.state);
     return (
-        <div className={styles.App}>
-          <Switch>
-            <Route path="/login" component={Login}/>
-            <Route path="/"      component={Main}/>
-          </Switch>
-        </div>
+      <Router>
+        <Switch>
+          <Route path="/main" component={Main}/>
+          <Route path="/activate" component={Activate} />
+          <Route path="/login" component={Login}/>
+          <Route path="/register" component={Login}/>
+          <Route path="/activation" component={Login}/>
+          <Route path="/logout" component={LogOutRedirect}/>
+          <Route path="/" component={Landing}/>
+        </Switch>
+      </Router>
     );
   }
 }

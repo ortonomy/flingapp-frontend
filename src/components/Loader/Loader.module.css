@@ -1,0 +1,29 @@
+.Loader {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+
+.LoaderElement {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.LoaderPip {
+  width: 25px;
+  height: 25px;
+  left: 25px;
+  transform-origin: bottom left;
+  animation: loader 1s ease-in-out infinite;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
