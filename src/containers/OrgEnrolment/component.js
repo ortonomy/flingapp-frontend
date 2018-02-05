@@ -1,6 +1,7 @@
 // react
 import React, { Component } from 'react';
 
+
 //library dependencies
 import { Link } from 'react-router-dom';
 
@@ -9,6 +10,7 @@ import styles from './style.module.css';
 
 // copy and assets
 import logo from '../../assets/images/full_title_compact_trans@svg.svg';
+
 
 class OrgEnrolment extends Component {
   render() {
