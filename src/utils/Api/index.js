@@ -58,6 +58,7 @@ class API {
           userPasswordResetRequested
           userFirstName
           userLastName
+          userOrg
         }
       }
     `;
@@ -113,6 +114,7 @@ class API {
             userPasswordResetRequested
             userFirstName
             userLastName
+            userOrg
           }
         }
       }
