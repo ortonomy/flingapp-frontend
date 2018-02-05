@@ -8,3 +8,29 @@
   align-items: center;
 }
 
+.Content {
+  width: 400px;
+  background: rgba(238,238,238,0.5);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.Image {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  margin: 22px 0;
+}
+
+.Components {
+  background: rgba(255,255,255,1);
+  display: flex;
+  justify-content: center;
+  width: calc(100% - 60px);
+  margin: 0 30px 30px 30px;
+  font-size: 1.8rem;
+  font-family: 'Proxima Nova Light';
+  padding: 2.7rem;
+}
