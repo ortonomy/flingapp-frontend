@@ -162,7 +162,7 @@ export const activateLogic = createLogic(
       })
       .catch( error=> {
         Debug.log('[action:process:apiError] ACTIVATE', error);
-        dispatch(actions.activateFail('Bad code or notted logged in.'));
+        dispatch(actions.activateFail('Bad code or not logged in.'));
       })
       .then( () => {
         done();
