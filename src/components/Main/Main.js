@@ -7,7 +7,7 @@ import { Switch, Route } from 'react-router-dom';
 // component dependencies
 import withLogin from '../../containers/Auth/withLogin';
 import withActivation from '../../containers/Auth/withActivation';
-import Freelancer from '../Freelancer/Freelancer';
+import { Freelancer } from '../../containers/Freelancer';
 import Project from '../Project/Project';
 import NavBar from '../NavBar/NavBar';
 
