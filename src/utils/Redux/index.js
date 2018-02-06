@@ -52,7 +52,7 @@ const checkLogin = async () => {
 const hydrateState = async () => {
   const user = await checkLogin();
   Debug.log('API.hydrateState() result: ', user.userDetails ? user : 'NOT LOGGGED IN');
-  if ( user ) {
+  if ( user.userDetails ) {
     return {
       Login: {
         user: {
