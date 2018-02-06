@@ -42,26 +42,25 @@ const checkLogin = async () => {
   if ( c.get('jwt') ) {
     const jwt = c.get('jwt');
       if ( jwt ) {
-        const isLoggedIn = await API.isLoggedIn(jwt);
-        if ( isLoggedIn ) {
-          return isLoggedIn;
-        }
+        const userDetails = await API.isLoggedIn(jwt);
+        return userDetails ? { userDetails: userDetails, jwt: jwt } : { userDetails: null, jwt: null };
       }
-    return null;
   }
+  return { userDetails: null, jwt: null };
 }
 
 const hydrateState = async () => {
-  const isLoggedIn = await checkLogin();
-  Debug.log('API.hydrateState() result: ', isLoggedIn ? isLoggedIn : 'NOT LOGGGED IN');
-  if ( isLoggedIn ) {
+  const user = await checkLogin();
+  Debug.log('API.hydrateState() result: ', user ? user : 'NOT LOGGGED IN');
+  if ( user ) {
     return {
       Login: {
         user: {
-          ...isLoggedIn
+          ...user.userDetails
         },
         loggedIn: true,
-        activated: isLoggedIn.userEmailConfirmed
+        activated: user.userDetails.userEmailConfirmed,
+        jwt: user.jwt
       }
     }
   }
