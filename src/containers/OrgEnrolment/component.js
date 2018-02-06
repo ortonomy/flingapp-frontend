@@ -1,9 +1,14 @@
+// author: @ortonomy, Feb 2018 v1
+
 // react
 import React, { Component } from 'react';
 
 
 //library dependencies
 import { Link } from 'react-router-dom';
+
+// component dependencies 
+import EnrollmentForms from '../../components/EnrollmentForms';
 
 // styles
 import styles from './style.module.css';
@@ -18,10 +23,10 @@ class OrgEnrolment extends Component {
       <div className={styles.Body}>
         <div className={styles.Content}>
           <div className={styles.Image}>
-              <Link to="/"><img src={logo} alt="Fling" /></Link>
+            <Link to="/"><img src={logo} alt="Fling" /></Link>
           </div>
           <div className={styles.Components} >
-            <p>Some Content</p>
+            <EnrollmentForms />
           </div>
         </div>
       </div>
