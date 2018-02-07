@@ -187,6 +187,7 @@ export const activateSuccessLogic = createLogic(
     process: ({ action, getState }, dispatch, done) => {
       const c = new Cookies();
       c.set('jwt', action.payload, { path: '/' });
+      done();
     }
   }
 );
