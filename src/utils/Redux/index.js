@@ -41,6 +41,7 @@ const checkLogin = async () => {
   const c = new Cookies();
   if ( c.get('jwt') ) {
     const jwt = c.get('jwt');
+    Debug.log('[checkLogin:getCookie] HYDRATESTATE', jwt);
       if ( jwt ) {
         const userDetails = await API.isLoggedIn(jwt);
         return userDetails ? { userDetails: userDetails, jwt: jwt } : { userDetails: null, jwt: null };
@@ -51,15 +52,16 @@ const checkLogin = async () => {
 
 const hydrateState = async () => {
   const user = await checkLogin();
-  Debug.log('API.hydrateState() result: ', user.userDetails ? user : 'NOT LOGGGED IN');
-  if ( user.userDetails ) {
+  const userDetails = user.userDetails === null ? null : user.userDetails.userAccId !== null ? user.userDetails : null; // this helps check to see if expired or invalid JWT is being used
+  Debug.log('API.hydrateState() result: ', userDetails !== null ? userDetails : 'NOT LOGGGED IN');
+  if ( userDetails !== null ) {
     return {
       Login: {
         user: {
-          ...user.userDetails
+          ...userDetails
         },
         loggedIn: true,
-        activated: user.userDetails ? user.userDetails.userEmailConfirmed : false,
+        activated: userDetails.userEmailConfirmed,
         jwt: user.jwt
       }
     }
