@@ -107,15 +107,7 @@ class API {
           selector: "${selector}",
           verifier: "${verifier}"
         }) {
-          simpleUser {
-            userAccId
-            userEmail
-            userEmailConfirmed
-            userPasswordResetRequested
-            userFirstName
-            userLastName
-            userOrg
-          }
+          jwtToken
         }
       }
     `;
