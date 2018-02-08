@@ -9,7 +9,7 @@ class API {
   static async isLoggedIn(jwt) {
     const query = this.generateThisUserQuery();
     return await this.Axios('POST', '/graphql', query, jwt)
-    .then ( response => ( response.thisUser ) ) 
+    .then ( response => ( response.thisUser ) )
     .catch ( err => {
       Debug.log(err);
       return null;
@@ -64,13 +64,31 @@ class API {
     `;
   }
 
+  static generateFreelancerInfoQuery(id) {
+    return `
+      query {
+          allFreelancers (condition: {flId:"16c3adff-6e92-4d80-8a63-3e9536197d47"}) {
+            nodes {
+              flFirstName
+              flLastName
+              flIsNativeSpeaker
+              flLocation
+              flTimezone
+              flPrimaryLanguage
+              flEmploymentStatus
+            }
+          }
+        }
+    `;
+  }
+
   static generateRegisterQuery({ firstName, lastName, email, password}) {
     return `
-      mutation { 
-        usrRegisterUser ( input: { 
+      mutation {
+        usrRegisterUser ( input: {
           firstName: "${firstName}",
           lastName: "${lastName}",
-          email: "${email}", 
+          email: "${email}",
           password: "${password}"
         }) {
           registeredUser {
@@ -78,7 +96,7 @@ class API {
             firstName
             lastName
             email
-            accountSelector 
+            accountSelector
             accountVerifier
             accountActivated
           }
@@ -90,8 +108,8 @@ class API {
   static generateLoginQuery({email, password}) {
     return `
       mutation {
-        authenticate (input: { 
-          email: "${email}", 
+        authenticate (input: {
+          email: "${email}",
           password: "${password}"
         } ) {
           jwtToken

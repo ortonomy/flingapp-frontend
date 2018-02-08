@@ -1,13 +1,16 @@
 // initial state
 const initialState = {
+  current_freelancer: {}
 }
 
 export default function FreelancerReducer(state = initialState, action) {
   switch(action.type) {
-    case 'FREELANCER': {
+    case 'FREELANCER_INFO': {
       return {
         ...state,
-        freelancer: ''
+        current_freelancer: {
+          ...action.payload.allFreelancers.nodes[0]
+        }
       }
     }
     default: {
