@@ -15,11 +15,8 @@ import NavBar from '../NavBar/NavBar';
 
 const Main = () => (
     <main>
-        <NavBar />
         <Switch>
-            <Route path='/freelancer' component={Freelancer}/>
             <Route path='/project'    component={Project}/>
-            <Route path='/'           component={Freelancer}/>
         </Switch>
     </main>
 )

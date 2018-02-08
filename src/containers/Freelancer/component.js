@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import Sidebar from '../../components/Sidebar/Sidebar.js';
 import FreelancerBody from '../../components/FreelancerBody/FreelancerBody';
+import NavBar from '../../components/NavBar/NavBar'
 
 // styles
 import freelancer from './Freelancer.module.css';
@@ -12,8 +13,6 @@ import { bindActionCreators } from 'redux';
 
 // actions
 import { actions } from './actions';
-
-const freelancer_id = 'f0892a5b-3c22-45be-964f-c87d95c4923a';
 
 @connect(
   state => ({
@@ -30,19 +29,24 @@ class Freelancer extends Component {
       this.getFreelancer = this.getFreelancer.bind(this);
   }
 
-  getFreelancer(id) {
-      this.props.freelancerQuery(id)
+  getFreelancer() {
+    if (this.props.match.params.id) {
+      this.props.freelancerQuery(this.props.match.params.id)
+    }
   }
 
   componentWillMount() {
-      this.getFreelancer(freelancer_id);
+      this.getFreelancer();
   }
 
   render() {
     return (
-      <div className={freelancer.Freelancer}>
+      <div>
+        <NavBar />
+        <div className={freelancer.Freelancer}>
         <Sidebar />
         <FreelancerBody freelancer={this.props.state.Freelancer.current_freelancer} />
+        </div>
       </div>
     )
   }
