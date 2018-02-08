@@ -5,13 +5,19 @@ import body from './FreelancerBody.module.css';
 
 class FreelancerBody extends Component {
   render() {
-    const name = this.props.freelancer.flFirstName + ' ' + this.props.freelancer.flLastName
+    if (!this.props.loading) {
     return (
       <div className={body.FreelancerBody}>
-        <FreelancerBanner name={name} title='Chief Editor' status='active' />
+        <FreelancerBanner name={this.props.freelancer.flFirstName + ' ' + this.props.freelancer.flLastName} title='Chief Editor' status='active' />
         <FreelancerInfo freelancer={this.props.freelancer} />
       </div>
     )
+    }
+    else {
+      return (
+        <div></div>
+      )
+    }
   }
 }
 

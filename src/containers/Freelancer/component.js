@@ -45,7 +45,8 @@ class Freelancer extends Component {
         <NavBar />
         <div className={freelancer.Freelancer}>
         <Sidebar />
-        <FreelancerBody freelancer={this.props.state.Freelancer.current_freelancer} />
+        <FreelancerBody freelancer={this.props.state.Freelancer.current_freelancer}
+                        loading={this.props.state.Freelancer.loading_freelancer} />
         </div>
       </div>
     )

@@ -30,11 +30,11 @@ export const freelancerQueryLogic = createLogic(
           Debug.log('[action:process:freelancer_info] FREELANCER_QUERY', data);
           dispatch(actions.freelancerInfo(data));
         } else {
-          throw(new Error('Something went wrong.'));
+          throw(new Error('Request failed.'));
         }
       })
       .catch( error => {
-        console.log('caught an error');
+        throw(new Error(error));
       })
       .then ( () => {
         done();
@@ -63,7 +63,7 @@ export const freelancerInfoLogic = createLogic(
         console.log(data);
       })
       .catch( error => {
-        console.log('caught an error');
+        throw(new Error(error));
       })
       .then ( () => {
         done();
