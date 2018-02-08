@@ -14,9 +14,9 @@ import FormButton from '../FormButton';
 import ErrorMessage from '../ErrorMessage';
 
 // styles
-//import styles from './EnrollmentForms.module.css';
+import styles from './EnrollmentForms.module.css';
 
-//debug
+// debug
 import Debug from '../../utils/Debug';
 
 @connect(
@@ -84,7 +84,7 @@ class EnrollmentForm extends Component {
   render() {
     Debug.log('[render] of <EnrollmentForm>: ', this.props);
     const f = (
-      <form>
+      <form className={styles.Form}>
         <FormInputAnimated passValue={this.handleOrgName} name="orgname" text="Organization name" type="text" />
         <div>
           { 

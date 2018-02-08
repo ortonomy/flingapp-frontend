@@ -4,7 +4,7 @@
   justify-content: center;
   flex-flow: column nowrap;
   padding: 15px 0 25px 0;
-  width: 100%;
+  width: calc(100% - 50px);
 }
 
 .element {
@@ -44,5 +44,5 @@
 }
 
 .ErrorBox {
-  width: calc(100% - 50px);
+  width: 100%;
 }
