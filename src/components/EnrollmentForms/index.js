@@ -16,7 +16,7 @@ import ErrorMessage from '../ErrorMessage';
 // styles
 import styles from './EnrollmentForms.module.css';
 
-// debug
+//debug
 import Debug from '../../utils/Debug';
 
 @connect(

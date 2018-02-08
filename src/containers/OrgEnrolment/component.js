@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 
 // component dependencies 
 import EnrollmentForms from '../../components/EnrollmentForms';
+
 import FormText from '../../components/FormText';
 
 // styles
