@@ -56,7 +56,9 @@ export default function loginReducer(state = initialState, action) {
     case 'ACTIVATE_SUCCESS': {
       return {
         ...state,
-        activating: false
+        activating: false,
+        activated: true,
+        jwt: action.payload
       }
     }
     case 'ACTIVATE_FAIL': {

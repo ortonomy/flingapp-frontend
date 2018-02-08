@@ -76,6 +76,7 @@ export const loginLogic = createLogic(
       API.Axios('POST', '/graphql', API.generateLoginQuery(action.payload), null)
       .then ( data => {
         if ( data.authenticate && data.authenticate.hasOwnProperty('jwtToken') && data.authenticate.jwtToken !== null ) {
+          Debug.log('[action:process:jwt] LOGIN', data.authenticate.jwtToken);
           dispatch(actions.loginSuccess(data.authenticate.jwtToken));
         } else {
           throw(new Error('Incorrect email or password'));
@@ -104,6 +105,7 @@ export const loginSuccessLogic = createLogic(
     },
     process: ({ action }, dispatch, done) => {
       const c = new Cookies();
+      Debug.log('[action:process:jwt] LOGIN_SUCCESS', action.payload);
       c.set('jwt', action.payload, { path: '/' });
       dispatch(actions.thisUserUpdate());
       done();
@@ -158,11 +160,11 @@ export const activateLogic = createLogic(
       API.Axios('POST', '/graphql', API.generateActivateQuery(action.payload), state.Login.jwt)
       .then ( data => {
         Debug.log('[action:process:apiSuccess] ACTIVATE', data);
-        dispatch(actions.activateSuccess(data.activateUser.simpleUser));
+        dispatch(actions.activateSuccess(data.activateUser.jwtToken));
       })
       .catch( error=> {
         Debug.log('[action:process:apiError] ACTIVATE', error);
-        dispatch(actions.activateFail('Bad code or notted logged in.'));
+        dispatch(actions.activateFail('Bad code or not logged in.'));
       })
       .then( () => {
         done();
@@ -176,10 +178,16 @@ export const activateSuccessLogic = createLogic(
     type: actionTypes.ACTIVATE_SUCCESS,
     validate: ({ action }, allow, reject) => {
       if ( action.type === 'ACTIVATE_SUCCESS' && action.payload ) {
+        Debug.log('[action:validate:allow] ACTIVATESUCCESS', action);
         allow(action);
       } else {  /* empty request, silently reject */
         reject();
       }
+    },
+    process: ({ action, getState }, dispatch, done) => {
+      const c = new Cookies();
+      c.set('jwt', action.payload, { path: '/' });
+      done();
     }
   }
 );
