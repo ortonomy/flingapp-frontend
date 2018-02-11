@@ -9,6 +9,7 @@
 
 .user {
   padding: 0 0.5em;
+  text-transform: capitalize;
 }
 
 .gravatar {
