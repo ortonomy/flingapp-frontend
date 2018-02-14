@@ -12,6 +12,7 @@ import * as Redux from './utils/Redux';
 import RootContainer from './RootContainer';
 
 // global styles
+import 'sanitize.css';
 import './index.css';
 import 'font-awesome/css/font-awesome.min.css';
 
