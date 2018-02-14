@@ -131,7 +131,7 @@ export const logOut = () => (
   {
     type: LOGOUT
   }
-)
+);
 
 
 // all action creators
@@ -150,5 +150,5 @@ export const actions = {
   thisUserUpdateFail,
   setErrors,
   logOut
-}
+};
 

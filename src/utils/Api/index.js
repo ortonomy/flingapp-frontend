@@ -112,6 +112,38 @@ class API {
       }
     `;
   }
+
+  static generateOrgSearchQuery(orgName) {
+    return `
+      query { 
+        organizationByOrgName (orgName: "${orgName}") {
+          orgDomain
+          orgAdmin
+          orgName
+          orgId
+        }
+      }    
+    `;
+  }
+
+  static generateCreateOrgMutation({user, name}) {
+    return `
+      mutation { 
+        createOrganization (input: {
+          organization: {
+            orgAdmin: "${user}",
+            orgName: "${name}"
+          }
+        }) {
+          organization {
+            orgAdmin
+            orgName
+            orgId
+          }
+        }
+      }    
+    `;
+  }
 }
 
 export default API;

@@ -32,7 +32,7 @@ export const password = {
 }
 
 export const text = {
-  pattern: "^[a-zA-Z\- ]+$",
-  patternMismatch: "Text fields must only use a-z, - or spaces.",
+  pattern: "^[a-zA-Z\-\. ]+$",
+  patternMismatch: "Text fields must only use a-z, -, periods, or spaces.",
   valueMissing: 'This field is required.'
 }

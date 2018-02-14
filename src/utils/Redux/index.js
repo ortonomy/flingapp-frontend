@@ -20,7 +20,7 @@ const deps = {
   }
 };
 
-//initial state is not needed here, done inside store config
+//initial state setup (may need to move this to external state model file)
 const initialState = {
   Login: {
     loggedIn: false,
@@ -34,6 +34,18 @@ const initialState = {
     lastActivationError: null,
     jwt: null,
     user: null
+  },
+  Org: {
+    userOrg: null,
+    lastOrgError: null,
+    enrolment: {
+      searching: false,
+      searched: false,
+      found: false,
+      searchTerm: null,
+      currentOrg: null,
+      created: false
+    }
   }
 };
 
@@ -42,10 +54,10 @@ const checkLogin = async () => {
   if ( c.get('jwt') ) {
     const jwt = c.get('jwt');
     Debug.log('[checkLogin:getCookie] HYDRATESTATE', jwt);
-      if ( jwt ) {
-        const userDetails = await API.isLoggedIn(jwt);
-        return userDetails ? { userDetails: userDetails, jwt: jwt } : { userDetails: null, jwt: null };
-      }
+    if ( jwt ) {
+      const userDetails = await API.isLoggedIn(jwt);
+      return userDetails ? { userDetails: userDetails, jwt: jwt } : { userDetails: null, jwt: null };
+    }
   }
   return { userDetails: null, jwt: null };
 }
@@ -63,6 +75,9 @@ const hydrateState = async () => {
         loggedIn: true,
         activated: userDetails.userEmailConfirmed,
         jwt: user.jwt
+      },
+      Org: {
+        hasOrg: user.userOrg ? true: false
       }
     }
   }
