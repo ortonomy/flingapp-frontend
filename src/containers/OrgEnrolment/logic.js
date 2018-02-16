@@ -4,6 +4,7 @@ import { createLogic } from 'redux-logic';
 
 //custom actions
 import { actionTypes, actions } from './actions';
+import { actions as loginActions } from '../Login/actions';
 
 // custom utils
 import API from '../../utils/Api';
@@ -57,7 +58,7 @@ export const orgCreateLogic = createLogic(
       Debug.log('[action:process:remoteAPI] ORG_CREATE', action);
       API.Axios('POST', '/graphql', API.generateCreateOrgMutation({user: state.Login.user.userAccId, name: state.Org.enrolment.searchTerm}), state.Login.jwt)
       .then ( data => (dispatch(actions.orgCreateSuccess(data.createOrganization.organization))))
-      .catch ( err => (dispatch(action.orgCreateFail(err.message))))
+      .catch ( err => (dispatch(actions.orgCreateFail(err.message))))
       .then( () => ( done()));
     }
   }
@@ -74,6 +75,8 @@ export const orgCreateSuccessLogic = createLogic(
       }
     },
     process: ({ getState, action }, dispatch, done ) => {
+      dispatch(loginActions.addUserOrg(action.payload.orgId));
+      done();
     }
   }
 )

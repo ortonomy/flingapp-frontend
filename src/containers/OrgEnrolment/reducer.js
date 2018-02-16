@@ -39,7 +39,7 @@ export default function orgReducer(state = initialState, action) {
       }
     }
     case 'ORG_SEARCH_FAIL': {
-      return {
+      return {  
         ...state,
         enrolment: {
           ...state.enrolment,

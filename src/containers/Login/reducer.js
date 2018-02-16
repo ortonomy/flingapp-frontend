@@ -103,6 +103,15 @@ export default function loginReducer(state = initialState, action) {
         loggedIn: false
       }
     }
+    case 'ADD_USER_ORG_SUCCESS': {
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          userOrg: action.payload
+        }
+      }
+    }
     default: {
       return state;
     }

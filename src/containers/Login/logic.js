@@ -75,9 +75,9 @@ export const loginLogic = createLogic(
     process: ({ action }, dispatch, done) => {
       API.Axios('POST', '/graphql', API.generateLoginQuery(action.payload), null)
       .then ( data => {
-        if ( data.authenticate && data.authenticate.hasOwnProperty('jwtToken') && data.authenticate.jwtToken !== null ) {
-          Debug.log('[action:process:jwt] LOGIN', data.authenticate.jwtToken);
-          dispatch(actions.loginSuccess(data.authenticate.jwtToken));
+        if ( data.authenticate ) {
+          Debug.log('[action:process:jwt] LOGIN', data.authenticate);
+          dispatch(actions.loginSuccess(data.authenticate));
         } else {
           throw(new Error('Incorrect email or password'));
         }
@@ -135,7 +135,7 @@ export const thisUserUpdateLogic = createLogic(
       })
       .catch( error => {
         Debug.log(error);
-        dispatch(actions.thisUserUpdateSuccess(error.message));
+        dispatch(actions.thisUserUpdateFail(error.message));
       })
       .then( () => {
         done();
@@ -224,6 +224,56 @@ export const logOutLogic = createLogic(
 );
 
 
+export const addUserOrgLogic = createLogic(
+  {
+    type: actionTypes.ADD_USER_ORG,
+    validate: ({ action }, allow, reject) => {
+      if ( action.type === 'ADD_USER_ORG' && action.payload ) {
+        allow(action);
+      } else {  /* empty request, silently reject */
+        reject();
+      }
+    },
+    process: ({ action, getState }, dispatch, done) => {
+      const { Login } = (getState());
+      Debug.log('[action:process:remoteAPI] ADD_USER_ORG', action);
+      API.Axios(
+        'POST', '/graphql', 
+        API.generateUpdateUserByIdMutation(
+          {
+            id: Login.user.userAccId, 
+            email: Login.user.userEmail, 
+            firstName: Login.user.userFirstName, 
+            lastName: Login.user.userLastName, 
+            org: action.payload
+          }
+        ), 
+        Login.jwt
+      )
+      .then ( data => {
+        if ( data.usrUpdateUserById !== null ) {
+          dispatch(actions.addUserOrgSuccess(data.usrUpdateUserById.simpleUser.userOrg));
+        }
+      })
+      .catch ( err => ( dispatch(null)))
+      .then ( () => ( done() ));
+    }
+  }
+)
+
+export const addUserOrgLogicSuccess = createLogic(
+  {
+    type: actionTypes.ADD_USER_ORG_SUCCESS,
+    validate: ({ action }, allow, reject) => {
+      if ( action.type === 'ADD_USER_ORG_SUCCESS' && action.payload ) {
+        allow(action);
+      } else {  /* empty request, silently reject */
+        reject();
+      }
+    }
+  }
+)
+
 export default [
  loginLogic,
  loginSuccessLogic,
@@ -233,5 +283,6 @@ export default [
  activateSuccessLogic,
  activateFailLogic,
  thisUserUpdateLogic,
- logOutLogic
+ logOutLogic,
+ addUserOrgLogic
 ];

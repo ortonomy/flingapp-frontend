@@ -71,8 +71,11 @@ class EnrollmentForm extends Component {
     }
   }
 
-  keyPress({key}) {
+  keyPress(e) {
+    Debug.log('[keyPress] of <EnrollmentForm>: ', this.state);
+    const { key } = e;
     if ( key === 'Enter' ) {
+      e.preventDefault();
       this.submit();
     }
   }
@@ -97,7 +100,7 @@ class EnrollmentForm extends Component {
     let f;
     if ( !this.props.buttonOnly ) {
       f = (
-        <form className={styles.Form}>
+        <form className={styles.Form} onKeyDown={this.keyPress}>
           <FormInputAnimated passValue={this.handleOrgName} name="orgname" text="Organization name" type="text" />
           <div className={styles.ErrorMessage}>
             { 
@@ -111,7 +114,7 @@ class EnrollmentForm extends Component {
     }
 
     return (
-      <form className={styles.Form}>
+      <form className={styles.Form} onKeyDown={this.keyPress}>
         <div className={styles.ErrorMessage}>
             { 
               this.props.Org.lastOrgSearchError && ( <ErrorMessage messages={[this.props.Org.lastOrgSearchError]} />)

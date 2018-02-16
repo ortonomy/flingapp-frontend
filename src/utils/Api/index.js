@@ -89,13 +89,11 @@ class API {
 
   static generateLoginQuery({email, password}) {
     return `
-      mutation {
-        authenticate (input: { 
+      query {
+        authenticate ( 
           email: "${email}", 
           password: "${password}"
-        } ) {
-          jwtToken
-        }
+        ) 
       }
     `;
   }
@@ -139,6 +137,30 @@ class API {
             orgAdmin
             orgName
             orgId
+          }
+        }
+      }    
+    `;
+  }
+
+  static generateUpdateUserByIdMutation({id, email, firstName, lastName, org}) {
+    return `
+      mutation { 
+        usrUpdateUserById (input: {
+            userIdIn: "${id}",
+            userOrgIn: "${org}",
+            userFirstNameIn: "${firstName}",
+            userLastNameIn: "${lastName}",
+            userEmailIn: "${email}"
+        }) {
+          simpleUser {
+            userAccId
+            userEmail
+            userEmailConfirmed
+            userPasswordResetRequested
+            userFirstName
+            userLastName
+            userOrg
           }
         }
       }    
