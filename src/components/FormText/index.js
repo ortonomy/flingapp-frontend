@@ -6,9 +6,9 @@ import React from 'react';
 //styles
 import styles from './FormText.module.css';
 
-const FormText = ({ text, ...props}) => {
+const FormText = ({ text, handleClick, ...props}) => {
   return (
-    <p className={styles.Element}>{text}</p>
+    <p onClick={handleClick ? handleClick : null} className={styles.Element}>{text}</p>
   );
 }
 
