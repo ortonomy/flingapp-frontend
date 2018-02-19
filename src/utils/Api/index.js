@@ -16,6 +16,15 @@ class API {
     });
   }
 
+  static async hasOrgAccessRequestPending(jwt, id) {
+    return await this.Axios('POST', '/graphql', this.generateOrgRequestQuery(id), jwt)
+    .then ( response => ( response.orgRequestByRequestorId ) )
+    .catch ( err => {
+      Debug.log(err);
+      return null;
+    })
+  }
+
   static Axios(method = 'POST', endpoint = '/graphql', query = {}, auth = null ) {
     return new Promise((res, rej) => {
       const config = {
@@ -164,6 +173,47 @@ class API {
           }
         }
       }    
+    `;
+  }
+
+  static generateRequestAccessToOrgMutation({org, requestor}) {
+    return `
+      mutation {
+        requestAccessToOrg(
+          input: {
+            orgId:"${org}",
+            requestorId: "${requestor}"
+          }
+        ) {
+            accessRequest {
+              reqId
+              orgId
+              orgName
+              adminId
+              adminEmail
+              adminFirstName
+              adminLastName
+              requestorId
+              requestorFirstName
+              requestorLastName
+              selector
+              verifier
+              requestStatus
+            }
+          }
+      }
+    `;
+  }
+
+  static generateOrgRequestQuery(id) {
+    return `
+      query {
+        orgRequestByRequestorId (requestorId: "${id}") {
+          orgId
+          requestorId
+          requestConfirmed
+        }
+      }
     `;
   }
 }

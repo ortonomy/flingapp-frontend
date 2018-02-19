@@ -96,9 +96,62 @@ export const orgCreateFailLogic = createLogic(
   }
 )
 
+//// generateRequestAccessToOrgMutation
+
+export const orgRequestAccessLogic = createLogic(
+  {
+    type: actionTypes.ORG_REQUEST_ACCESS,
+    validate: ({ action }, allow, reject ) => {
+      if ( action.type === 'ORG_REQUEST_ACCESS' && action.payload) {
+        allow(action);
+      } else {  /* empty request, silently reject */
+        reject();
+      }
+    },
+    process: ({ getState, action }, dispatch, done ) => {
+      const state = getState();
+      Debug.log('[action:process:remoteAPI] ORG_REQUEST_ACCESS', action);
+      API.Axios('POST', '/orgaccess', API.generateRequestAccessToOrgMutation(action.payload), state.Login.jwt)
+      .then ( data => ( dispatch(action.orgRequestAccessSuccess(data.requestAccessToOrg.accessRequest) ) ) )
+      .catch ( err => ( dispatch(actions.orgRequestAccessFail(err.message) ) ) )
+      .then( () => ( done()));
+    }
+  }
+)
+
+export const orgRequestAccessSuccessLogic = createLogic(
+  {
+    type: actionTypes.ORG_REQUEST_ACCESS_SUCCESS,
+    validate:({ action }, allow, reject ) => {
+      if ( action.type === 'ORG_REQUEST_ACCESS_SUCCESS' && action.payload ) {
+        allow(action);
+      } else {
+        reject();
+      }
+    }
+  }
+)
+
+export const orgRequestAccessFailLogic = createLogic(
+  {
+    type: actionTypes.ORG_REQUEST_ACCESS_FAIL,
+    validate:({ action }, allow, reject ) => {
+      if ( action.type === 'ORG_REQUEST_ACCESS_FAIL' && action.payload ) {
+        allow(action);
+      } else {
+        reject();
+      }
+    }
+  }
+)
+
+
 export default [
   orgSearchLogic,
   orgCreateLogic,
   orgCreateSuccessLogic,
-  orgCreateFailLogic
+  orgCreateFailLogic,
+  orgRequestAccessLogic,
+  orgRequestAccessSuccessLogic,
+  orgRequestAccessFailLogic
 ];

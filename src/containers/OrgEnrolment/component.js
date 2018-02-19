@@ -37,13 +37,16 @@ const createdButtonText = `GO TO APP`;
 @connect(
   state => (
     {
+      Login: state.Login,
       Org: state.Org 
     }
   ),
   dispatch => (
     {
       orgSearch: bindActionCreators(actions.orgSearch, dispatch),
-      orgCreate: bindActionCreators(actions.orgCreate, dispatch)
+      orgCreate: bindActionCreators(actions.orgCreate, dispatch),
+      orgRequestAccess: bindActionCreators(actions.orgRequestAccess, dispatch),
+      orgSearchReset: bindActionCreators(actions.resetOrgSearch, dispatch)
     }
   )
 )
@@ -55,6 +58,7 @@ class OrgEnrolment extends Component {
     this.requestOrgAccess = this.requestOrgAccess.bind(this);
     this.createNewOrg = this.createNewOrg.bind(this);
     this.confirmCreation = this.confirmCreation.bind(this);
+    this.resetOrgSearch = this.resetOrgSearch.bind(this);
   }
 
   findOrg(state) {
@@ -64,7 +68,12 @@ class OrgEnrolment extends Component {
   }
 
   requestOrgAccess() {
-    // this.props.requestOrgAccess(this.props.Org.enrolment.currentOrg.orgId);
+    this.props.orgRequestAccess(
+      {
+        org: this.props.Org.enrolment.currentOrg.orgId, 
+        requestor: this.props.Login.user.userAccId
+      }
+    );
   }
 
   createNewOrg() {
@@ -73,6 +82,10 @@ class OrgEnrolment extends Component {
 
   confirmCreation() {
     this.props.history.push('/main');
+  }
+
+  resetOrgSearch() {
+    this.props.orgSearchReset();
   }
 
   getFlowItem(step) {
@@ -92,7 +105,8 @@ class OrgEnrolment extends Component {
             <FormText key="greeting" text={foundText} />,
             <FormText key="org" text={Org.enrolment.currentOrg.orgName} />,
             <FormText key="condition" text={makeRequestText} />,
-            <EnrollmentForms key="button" submit={this.requestOrgAccess} buttonOnly={true} buttonText={requestButtonText} icon={'fa-question-circle'} />
+            <EnrollmentForms key="button" submit={this.requestOrgAccess} buttonOnly={true} buttonText={requestButtonText} icon={'fa-question-circle'} />,
+            <FormText handleClick={this.resetOrgSearch} key="backLink" text={backText} />
           ]
         );
       }
@@ -102,7 +116,7 @@ class OrgEnrolment extends Component {
             <FormText key="text" text={createNewText} />,
             <FormText key="org" text={Org.enrolment.searchTerm} />,
             <EnrollmentForms key="button" submit={this.createNewOrg} buttonOnly={true} buttonText={createNewButtonText} icon={'fa-plus-circle'} />,
-            <FormText key="backLink" text={backText} />
+            <FormText handleClick={this.resetOrgSearch} key="backLink" text={backText} />
           ]
         )
       }

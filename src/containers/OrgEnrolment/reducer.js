@@ -63,10 +63,31 @@ export default function orgReducer(state = initialState, action) {
         }
       }
     }
+    case 'ORG_REQUEST_ACCESS_SUCCESS': {
+      return {
+        ...state,
+        enrolment: {
+          ...state.enrolment,
+          accessRequested: true
+        }
+        
+      }
+    }
     case 'SET_ERRORS': {
       return {
         ...state,
         ...action.payload
+      }
+    }
+    case 'RESET_ORG_SEARCH': {
+      return {
+        ...state,
+        enrolment: {
+          ...state.enrolment,
+          searched: false,
+          searching: false,
+          searchTerm: null
+        }
       }
     }
     default: {

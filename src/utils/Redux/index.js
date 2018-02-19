@@ -44,7 +44,8 @@ const initialState = {
       found: false,
       searchTerm: null,
       currentOrg: null,
-      created: false
+      created: false,
+      accessRequested: false
     }
   }
 };
@@ -62,31 +63,47 @@ const checkLogin = async () => {
   return { userDetails: null, jwt: null };
 }
 
+const checkOrg = async (id) => {
+  const c = new Cookies();
+  if ( ! c.get('jwt') ) {
+    return null;
+  }
+
+  return await API.hasOrgAccessRequestPending(c.get('jwt'), id);
+}
+
 const hydrateState = async () => {
   const user = await checkLogin();
   const userDetails = user.userDetails === null ? null : user.userDetails.userAccId !== null ? user.userDetails : null; // this helps check to see if expired or invalid JWT is being used
+  const org = userDetails && !userDetails.userOrg ? await checkOrg(userDetails.userAccId) : null;
   Debug.log('API.hydrateState() result: ', userDetails !== null ? userDetails : 'NOT LOGGGED IN');
-  if ( userDetails !== null ) {
-    return {
-      Login: {
-        user: {
-          ...userDetails
-        },
-        loggedIn: true,
-        activated: userDetails.userEmailConfirmed,
-        jwt: user.jwt
-      },
-      Org: {
-        hasOrg: user.userOrg ? true: false
-      }
+  let partialState = {};
+
+
+  if ( !userDetails ) {
+    return partialState;
+  }
+
+  partialState.Login = {
+    user: {
+      ...userDetails
+    },
+    loggedIn: true,
+    activated: userDetails.userEmailConfirmed,
+    jwt: user.jwt
+  };
+
+  if ( !org ) {
+    return partialState;
+  }
+
+  partialState.Org = {
+    enrolment: {
+      accessRequested: true
     }
   }
-  return {
-    Login: {
-      loggedIn: false,
-      activated: false
-    }
-  };
+
+  return partialState;
 }
 
 
@@ -98,6 +115,13 @@ export const configureStore = async () => {
     Login: {
       ...initialState.Login,
       ...hydratedState.Login
+    },
+    Org: {
+      ...initialState.Org,
+      enrolment: {
+        ...initialState.Org.enrolment,
+        ...hydratedState.Org.enrolment
+      }
     }
   }
   const logicMiddleware = createLogicMiddleware(rootLogic, deps); // create logic middleware
