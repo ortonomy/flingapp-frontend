@@ -7,6 +7,7 @@ import { Switch, Route } from 'react-router-dom';
 // component dependencies
 import withLogin from '../../containers/Auth/withLogin';
 import withActivation from '../../containers/Auth/withActivation';
+import withOrg from '../../containers/Auth/withOrg';
 import Freelancer from '../Freelancer/Freelancer';
 import Project from '../Project/Project';
 import NavBar from '../NavBar/NavBar';
@@ -24,4 +25,4 @@ const Main = () => (
     </main>
 )
 
-export default withLogin(withActivation(Main));
+export default withLogin(withActivation(withOrg(Main)));

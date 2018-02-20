@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 // component dependencies 
+import hasOrgRedirect from '../Auth/hasOrgRedirect';
 import EnrollmentForms from '../../components/EnrollmentForms';
 import FormText from '../../components/FormText';
 import Loader from '../../components/Loader';
@@ -157,4 +158,4 @@ class OrgEnrolment extends Component {
   }
 }
 
-export default withRouter(OrgEnrolment);
+export default hasOrgRedirect(withRouter(OrgEnrolment));

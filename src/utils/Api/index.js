@@ -7,8 +7,7 @@ import Debug from '../Debug';
 
 class API {
   static async isLoggedIn(jwt) {
-    const query = this.generateThisUserQuery();
-    return await this.Axios('POST', '/graphql', query, jwt)
+    return await this.Axios('POST', '/graphql', this.generateThisUserQuery(), jwt)
     .then ( response => ( response.thisUser ) ) 
     .catch ( err => {
       Debug.log(err);

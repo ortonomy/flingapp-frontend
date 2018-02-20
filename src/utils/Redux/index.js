@@ -77,7 +77,7 @@ const hydrateState = async () => {
   const userDetails = user.userDetails === null ? null : user.userDetails.userAccId !== null ? user.userDetails : null; // this helps check to see if expired or invalid JWT is being used
   const org = userDetails && !userDetails.userOrg ? await checkOrg(userDetails.userAccId) : null;
   Debug.log('API.hydrateState() result: ', userDetails !== null ? userDetails : 'NOT LOGGGED IN');
-  let partialState = {};
+  let partialState = { Login: null, Org: null };
 
 
   if ( !userDetails ) {
@@ -118,10 +118,7 @@ export const configureStore = async () => {
     },
     Org: {
       ...initialState.Org,
-      enrolment: {
-        ...initialState.Org.enrolment,
-        ...hydratedState.Org.enrolment
-      }
+      ...hydratedState.Org
     }
   }
   const logicMiddleware = createLogicMiddleware(rootLogic, deps); // create logic middleware
