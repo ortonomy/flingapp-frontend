@@ -20,7 +20,7 @@ const deps = {
   }
 };
 
-//initial state is not needed here, done inside store config
+//initial state setup (may need to move this to external state model file)
 const initialState = {
   Login: {
     loggedIn: false,
@@ -34,6 +34,24 @@ const initialState = {
     lastActivationError: null,
     jwt: null,
     user: null
+  },
+  Org: {
+    userOrg: null,
+    lastOrgError: null,
+    enrolment: {
+      searching: false,
+      searched: false,
+      found: false,
+      searchTerm: null,
+      currentOrg: null,
+      created: false,
+      accessRequested: false
+    },
+    validation: {
+      validating: false,
+      validated: false,
+      lastValidationError: null
+    }
   }
 };
 
@@ -42,36 +60,60 @@ const checkLogin = async () => {
   if ( c.get('jwt') ) {
     const jwt = c.get('jwt');
     Debug.log('[checkLogin:getCookie] HYDRATESTATE', jwt);
-      if ( jwt ) {
-        const userDetails = await API.isLoggedIn(jwt);
-        return userDetails ? { userDetails: userDetails, jwt: jwt } : { userDetails: null, jwt: null };
-      }
+    if ( jwt ) {
+      const userDetails = await API.isLoggedIn(jwt);
+      return userDetails ? { userDetails: userDetails, jwt: jwt } : { userDetails: null, jwt: null };
+    }
   }
   return { userDetails: null, jwt: null };
+}
+
+const checkOrg = async (id) => {
+  const c = new Cookies();
+  if ( ! c.get('jwt') ) {
+    return null;
+  }
+
+  return await API.hasOrgAccessRequestPending(c.get('jwt'), id);
 }
 
 const hydrateState = async () => {
   const user = await checkLogin();
   const userDetails = user.userDetails === null ? null : user.userDetails.userAccId !== null ? user.userDetails : null; // this helps check to see if expired or invalid JWT is being used
+  const org = userDetails && !userDetails.userOrg ? await checkOrg(userDetails.userAccId) : null;
   Debug.log('API.hydrateState() result: ', userDetails !== null ? userDetails : 'NOT LOGGGED IN');
-  if ( userDetails !== null ) {
-    return {
-      Login: {
-        user: {
-          ...userDetails
-        },
-        loggedIn: true,
-        activated: userDetails.userEmailConfirmed,
-        jwt: user.jwt
+  let partialState = { Login: null, Org: null };
+
+
+  if ( !userDetails ) {
+    return partialState;
+  }
+
+  partialState.Login = {
+    ...initialState.Login,
+    user: {
+      ...userDetails
+    },
+    loggedIn: true,
+    activated: userDetails.userEmailConfirmed,
+    jwt: user.jwt
+  };
+
+  if ( !org ) {
+    return partialState;
+  }
+
+  partialState.Org = {
+    enrolment: {
+      ...initialState.Org.enrolment,
+      accessRequested: true,
+      currentOrg: {
+        orgId: org.orgId
       }
     }
   }
-  return {
-    Login: {
-      loggedIn: false,
-      activated: false
-    }
-  };
+
+  return partialState;
 }
 
 
@@ -83,6 +125,10 @@ export const configureStore = async () => {
     Login: {
       ...initialState.Login,
       ...hydratedState.Login
+    },
+    Org: {
+      ...initialState.Org,
+      ...hydratedState.Org
     }
   }
   const logicMiddleware = createLogicMiddleware(rootLogic, deps); // create logic middleware

@@ -11,6 +11,8 @@ import { Landing } from '../Landing';
 import Activate from '../Activate';
 import Main from '../../components/Main/Main.js';
 import LogOutRedirect from '../Auth/LogOutRedirect';
+import { OrgEnrolment } from '../OrgEnrolment';
+import ValidateOrg from '../ValidateOrg';
 
 //debug 
 import Debug from '../../utils/Debug';
@@ -33,6 +35,8 @@ class App extends Component {
           <Route path="/register" component={Login}/>
           <Route path="/activation" component={Login}/>
           <Route path="/logout" component={LogOutRedirect}/>
+          <Route path="/enroll" component={OrgEnrolment}/>
+          <Route path="/validateorg" component={ValidateOrg}/>
           <Route path="/" component={Landing}/>
         </Switch>
       </Router>

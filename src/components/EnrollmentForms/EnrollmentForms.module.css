@@ -1,0 +1,16 @@
+/* 
+  author: @ortonomy
+  date: Feb 2018
+  version: 1 
+*/
+
+.Form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ErrorMessage {
+  width: 100%;
+}

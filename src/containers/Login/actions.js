@@ -11,6 +11,9 @@ export const ACTIVATE_FAIL = 'ACTIVATE_FAIL';
 export const THIS_USER_UPDATE = 'THIS_USER_UPDATE';
 export const THIS_USER_UPDATE_SUCCESS = 'THIS_USER_UPDATE_SUCCESS';
 export const THIS_USER_UPDATE_FAIL = 'THIS_USER_UPDATE_FAIL';
+export const ADD_USER_ORG = 'ADD_USER_ORG';
+export const ADD_USER_ORG_SUCCESS = 'ADD_USER_ORG_SUCCESS';
+export const ADD_USER_ORG_FAIL = 'ADD_USER_ORG_FAIL';
 export const SET_ERRORS = 'SET_ERRORS';
 export const LOGOUT = 'LOGOUT';
 
@@ -28,6 +31,9 @@ export const actionTypes = {
   THIS_USER_UPDATE,
   THIS_USER_UPDATE_SUCCESS,
   THIS_USER_UPDATE_FAIL,
+  ADD_USER_ORG,
+  ADD_USER_ORG_SUCCESS,
+  ADD_USER_ORG_FAIL,
   SET_ERRORS,
   LOGOUT
 };
@@ -120,6 +126,28 @@ export const thisUserUpdateFail = err => (
   }
 );
 
+export const addUserOrg = org => (
+  {
+    type: ADD_USER_ORG,
+    payload: org
+  }
+);
+
+export const addUserOrgSuccess = result => (
+  {
+    type: ADD_USER_ORG_SUCCESS,
+    payload: result
+  }
+)
+
+export const addUserOrgFail = err => (
+  {
+    type: ADD_USER_ORG_FAIL,
+    payload: err,
+    error: true
+  }
+);
+
 export const setErrors = error => (
   {
     type: SET_ERRORS,
@@ -131,7 +159,7 @@ export const logOut = () => (
   {
     type: LOGOUT
   }
-)
+);
 
 
 // all action creators
@@ -148,7 +176,10 @@ export const actions = {
   thisUserUpdate,
   thisUserUpdateSuccess,
   thisUserUpdateFail,
+  addUserOrg,
+  addUserOrgSuccess,
+  addUserOrgFail,
   setErrors,
   logOut
-}
+};
 

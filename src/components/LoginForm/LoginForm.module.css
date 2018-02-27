@@ -4,7 +4,7 @@
   justify-content: center;
   flex-flow: column nowrap;
   padding: 15px 0 25px 0;
-  width: 100%;
+  width: calc(100% - 50px);
 }
 
 .Element {
@@ -19,12 +19,12 @@
 }
 
 .Forgot {
-  width: calc(100% - 50px);
+  width: 100%;
   margin: 0 0 15px 0;
   font-size: 1.2rem;
   text-align: right;
 }
 
 .ErrorBox {
-  width: calc(100% - 50px);
+  width: 100%;
 }
