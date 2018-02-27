@@ -86,7 +86,44 @@ export default function orgReducer(state = initialState, action) {
           ...state.enrolment,
           searched: false,
           searching: false,
-          searchTerm: null
+          searchTerm: null,
+          accessRequested: false,
+          currentOrg: null,
+          created: false,
+          found: false
+        }
+      }
+    }
+    case 'VALIDATE_USER_ORG_ACCESS': {
+      return {
+        ...state,
+        validation: {
+          ...state.validation,
+          validating: true,
+          validated: false,
+          lastValidationError: null
+        }
+      }
+    }
+    case 'VALIDATE_USER_ORG_ACCESS_SUCCESS': {
+      return {
+        ...state,
+        validation: {
+          ...state.validation,
+          validating: false,
+          validated: true,
+          lastValidationError: null
+        }
+      }
+    }
+    case 'VALIDATE_USER_ORG_ACCESS_FAIL': {
+      return {
+        ...state,
+        validation: {
+          ...state.validation,
+          validating: false,
+          validated: false,
+          lastValidationError: action.payload
         }
       }
     }

@@ -215,6 +215,25 @@ class API {
       }
     `;
   }
+
+  static generateValidateUserOrgAccessRequestMutation({selector, verifier}) {
+    return `
+      mutation {
+        validateOrgAccess(
+            input: {
+              selector:"${selector}",
+              verifier: "${verifier}"
+          }
+        ) {
+          simpleAccessRequest {
+            orgId
+            requestorId
+            requestConfirmed
+          }
+        }
+      }
+    `;
+  }
 }
 
 export default API;

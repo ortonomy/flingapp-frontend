@@ -274,15 +274,16 @@ export const addUserOrgLogicSuccess = createLogic(
   }
 )
 
+
 export default [
- loginLogic,
- loginSuccessLogic,
- registerLogic,
- registerSuccessLogic,
- activateLogic,
- activateSuccessLogic,
- activateFailLogic,
- thisUserUpdateLogic,
- logOutLogic,
- addUserOrgLogic
+  loginLogic,
+  loginSuccessLogic,
+  registerLogic,
+  registerSuccessLogic,
+  activateLogic,
+  activateSuccessLogic,
+  activateFailLogic,
+  thisUserUpdateLogic,
+  logOutLogic,
+  addUserOrgLogic
 ];

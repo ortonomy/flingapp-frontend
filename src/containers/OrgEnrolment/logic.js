@@ -112,7 +112,7 @@ export const orgRequestAccessLogic = createLogic(
       const state = getState();
       Debug.log('[action:process:remoteAPI] ORG_REQUEST_ACCESS', action);
       API.Axios('POST', '/orgaccess', API.generateRequestAccessToOrgMutation(action.payload), state.Login.jwt)
-      .then ( data => ( dispatch(action.orgRequestAccessSuccess(data.requestAccessToOrg.accessRequest) ) ) )
+      .then ( data => ( dispatch(actions.orgRequestAccessSuccess(data.requestAccessToOrg.accessRequest) ) ) )
       .catch ( err => ( dispatch(actions.orgRequestAccessFail(err.message) ) ) )
       .then( () => ( done()));
     }
@@ -145,6 +145,57 @@ export const orgRequestAccessFailLogic = createLogic(
   }
 )
 
+export const validateUserOrgRequestLogic = createLogic(
+  {
+    type: actionTypes.VALIDATE_USER_ORG_ACCESS,
+    validate: ({ action }, allow, reject) => {
+      if ( action.type === 'VALIDATE_USER_ORG_ACCESS' && action.payload ) {
+        allow(action);
+      } else {  /* empty request, silently reject */
+        reject();
+      }
+    },
+    process: ({ action, getState }, dispatch, done) => {
+      const { Login } = (getState());
+      API.Axios('POST', '/graphql', API.generateValidateUserOrgAccessRequestMutation(action.payload), Login.jwt )
+      .then ( data => {
+        if ( !data.validateOrgAccess.simpleAccessRequest ) {
+          throw new Error('Request already processed, request expired, or bad code');
+        }
+        dispatch(actions.validateUserOrgAccessSuccess(data.validateOrgAccess));
+      })
+      .catch( err => ( dispatch(actions.validateUserOrgAccessFail(err.message)) ) )
+      .then ( () => ( done() ) );
+    }
+  }
+)
+
+export const validateUserOrgRequestSuccessLogic = createLogic(
+  {
+    type: actionTypes.VALIDATE_USER_ORG_ACCESS_SUCCESS,
+    validate: ({ action }, allow, reject) => {
+      if ( action.type === 'VALIDATE_USER_ORG_ACCESS_SUCCESS' && action.payload ) {
+        allow(action);
+      } else {  /* empty request, silently reject */
+        reject();
+      }
+    }
+  }
+)
+
+export const validateUserOrgRequestFailLogic = createLogic(
+  {
+    type: actionTypes.VALIDATE_USER_ORG_ACCESS_FAIL,
+    validate: ({ action }, allow, reject) => {
+      if ( action.type === 'VALIDATE_USER_ORG_ACCESS_FAIL' && action.payload ) {
+        allow(action);
+      } else {  /* empty request, silently reject */
+        reject();
+      }
+    }
+  }
+)
+
 
 export default [
   orgSearchLogic,
@@ -153,5 +204,8 @@ export default [
   orgCreateFailLogic,
   orgRequestAccessLogic,
   orgRequestAccessSuccessLogic,
-  orgRequestAccessFailLogic
+  orgRequestAccessFailLogic,
+  validateUserOrgRequestLogic,
+  validateUserOrgRequestSuccessLogic,
+  validateUserOrgRequestFailLogic
 ];

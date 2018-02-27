@@ -46,6 +46,11 @@ const initialState = {
       currentOrg: null,
       created: false,
       accessRequested: false
+    },
+    validation: {
+      validating: false,
+      validated: false,
+      lastValidationError: null
     }
   }
 };
@@ -85,6 +90,7 @@ const hydrateState = async () => {
   }
 
   partialState.Login = {
+    ...initialState.Login,
     user: {
       ...userDetails
     },
@@ -99,7 +105,11 @@ const hydrateState = async () => {
 
   partialState.Org = {
     enrolment: {
-      accessRequested: true
+      ...initialState.Org.enrolment,
+      accessRequested: true,
+      currentOrg: {
+        orgId: org.orgId
+      }
     }
   }
 

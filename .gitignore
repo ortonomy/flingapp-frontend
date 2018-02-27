@@ -55,8 +55,6 @@ typings/
 .yarn-integrity
 yarn.lock
 
-# NPM 
-package-lock.json
 
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 

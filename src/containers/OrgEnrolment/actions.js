@@ -10,6 +10,9 @@ export const ORG_REQUEST_ACCESS = 'ORG_REQUEST_ACCESS';
 export const ORG_REQUEST_ACCESS_SUCCESS = 'ORG_REQUEST_ACCESS_SUCCESS';
 export const ORG_REQUEST_ACCESS_FAIL = 'ORG_REQUEST_ACCESS_FAIL';
 export const RESET_ORG_SEARCH = 'RESET_ORG_SEARCH';
+export const VALIDATE_USER_ORG_ACCESS = 'VALIDATE_USER_ORG_ACCESS';
+export const VALIDATE_USER_ORG_ACCESS_SUCCESS = 'VALIDATE_USER_ORG_ACCESS_SUCCESS';
+export const VALIDATE_USER_ORG_ACCESS_FAIL = 'VALIDATE_USER_ORG_ACCESS_FAIL';
 
 
 // all action types
@@ -24,7 +27,10 @@ export const actionTypes = {
   ORG_REQUEST_ACCESS,
   ORG_REQUEST_ACCESS_SUCCESS,
   ORG_REQUEST_ACCESS_FAIL,
-  RESET_ORG_SEARCH
+  RESET_ORG_SEARCH,
+  VALIDATE_USER_ORG_ACCESS,
+  VALIDATE_USER_ORG_ACCESS_SUCCESS,
+  VALIDATE_USER_ORG_ACCESS_FAIL
 }
 
 // action creators
@@ -106,6 +112,28 @@ export const resetOrgSearch = () => (
   }
 )
 
+export const validateUserOrgAccess = (codes) => (
+  {
+    type: VALIDATE_USER_ORG_ACCESS,
+    payload: codes
+  } 
+)
+
+export const validateUserOrgAccessSuccess = (result) => (
+  {
+    type: VALIDATE_USER_ORG_ACCESS_SUCCESS,
+    payload: result
+  } 
+)
+
+export const validateUserOrgAccessFail = (err) => (
+  {
+    type: VALIDATE_USER_ORG_ACCESS_FAIL,
+    payload: err,
+    error: true
+  } 
+)
+
 // all action creators
 export const actions = {
   orgSearch,
@@ -118,5 +146,8 @@ export const actions = {
   orgRequestAccess,
   orgRequestAccessSuccess,
   orgRequestAccessFail,
-  resetOrgSearch
+  resetOrgSearch,
+  validateUserOrgAccess,
+  validateUserOrgAccessSuccess,
+  validateUserOrgAccessFail
 }

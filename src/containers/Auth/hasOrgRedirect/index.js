@@ -14,7 +14,8 @@ const hasOrgRedirect = (WrappedComponent) => {
   @connect(
     state => (
       {
-        Login: state.Login
+        Login: state.Login,
+        Org: state.Org
       }
     ),
     null
@@ -22,8 +23,8 @@ const hasOrgRedirect = (WrappedComponent) => {
   class hasOrgRedirector extends Component {
     render() {
       Debug.log('[render] of <hasOrgRedirect>: ', this.props);
-      const { Login } = this.props;
-      if ( Login.user.userOrg ) {
+      const { Login, Org } = this.props;
+      if ( Login.user.userOrg && !Org.enrolment.created ) {
         return (<Redirect to='/main' />);
       } else {
         return (<WrappedComponent {...this.props} />);
