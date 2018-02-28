@@ -75,9 +75,9 @@ export const loginLogic = createLogic(
     process: ({ action }, dispatch, done) => {
       API.Axios('POST', '/graphql', API.generateLoginQuery(action.payload), null)
       .then ( data => {
-        if ( data.authenticate && data.authenticate.hasOwnProperty('jwtToken') && data.authenticate.jwtToken !== null ) {
-          Debug.log('[action:process:jwt] LOGIN', data.authenticate.jwtToken);
-          dispatch(actions.loginSuccess(data.authenticate.jwtToken));
+        if ( data.authenticate && data.authenticate !== null ) {
+          Debug.log('[action:process:jwt] LOGIN', data.authenticate);
+          dispatch(actions.loginSuccess(data.authenticate));
         } else {
           throw(new Error('Incorrect email or password'));
         }
