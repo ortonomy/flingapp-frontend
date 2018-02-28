@@ -23,12 +23,12 @@ export const freelancerQueryLogic = createLogic(
     },
     process: ({ action, getState }, dispatch, done) => {
       const state = getState();
-      Debug.log('calling] FREELANCER_QUERY', action.payload);
+      Debug.log('[calling] FREELANCER_QUERY', action.payload);
       API.Axios('POST', '/graphql', API.generateFreelancerInfoQuery(action.payload), state.Login.jwt)
       .then ( data => {
         if ( data ) {
           Debug.log('[action:process:freelancer_info] FREELANCER_QUERY', data);
-          dispatch(actions.freelancerInfo(data));
+          dispatch(actions.freelancerInfo(data.allFreelancers.edges[0]));
         } else {
           throw(new Error('Request failed.'));
         }
@@ -65,9 +65,6 @@ export const freelancerInfoLogic = createLogic(
       .catch( error => {
         throw(new Error(error));
       })
-      .then ( () => {
-        done();
-      });
     }
   }
 );

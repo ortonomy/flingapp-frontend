@@ -17,7 +17,7 @@ export default function FreelancerReducer(state = initialState, action) {
         ...state,
         loading_freelancer: false,
         current_freelancer: {
-          ...action.payload.allFreelancers.nodes[0]
+          ...action.payload.node
         }
       }
     }

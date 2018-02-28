@@ -66,16 +66,18 @@ class API {
 
   static generateFreelancerInfoQuery(id) {
     return `
-      query {
-          allFreelancers (condition: {flId:"16c3adff-6e92-4d80-8a63-3e9536197d47"}) {
-            nodes {
-              flFirstName
-              flLastName
-              flIsNativeSpeaker
-              flLocation
-              flTimezone
-              flPrimaryLanguage
-              flEmploymentStatus
+      {
+          allFreelancers (condition: {flId: "${id}"}) {
+            edges {
+              node {
+                flFirstName
+                flLastName
+                flIsNativeSpeaker
+                flLocation
+                flTimezone
+                flPrimaryLanguage
+                flEmploymentStatus
+              }
             }
           }
         }
@@ -107,7 +109,7 @@ class API {
 
   static generateLoginQuery({email, password}) {
     return `
-      mutation {
+      query {
         authenticate (input: {
           email: "${email}",
           password: "${password}"
