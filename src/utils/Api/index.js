@@ -110,12 +110,10 @@ class API {
   static generateLoginQuery({email, password}) {
     return `
       query {
-        authenticate (input: {
+        authenticate (
           email: "${email}",
           password: "${password}"
-        } ) {
-          jwtToken
-        }
+        )
       }
     `;
   }
