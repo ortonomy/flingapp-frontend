@@ -54,17 +54,6 @@ export const freelancerInfoLogic = createLogic(
       } else {  /* empty request, silently reject */
         reject();
       }
-    },
-    process: ({ action, getState }, dispatch, done) => {
-      const state = getState();
-      Debug.log('calling] FREELANCER_INFO', action.payload);
-      API.Axios('POST', '/graphql', API.generateFreelancerInfoQuery(action.payload), state.Login.jwt)
-      .then ( data => {
-        console.log(data);
-      })
-      .catch( error => {
-        throw(new Error(error));
-      })
     }
   }
 );
