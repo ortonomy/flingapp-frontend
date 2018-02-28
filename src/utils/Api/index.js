@@ -89,13 +89,11 @@ class API {
 
   static generateLoginQuery({email, password}) {
     return `
-      mutation {
-        authenticate (input: { 
+      query {
+        authenticate ( 
           email: "${email}", 
           password: "${password}"
-        } ) {
-          jwtToken
-        }
+        )
       }
     `;
   }
