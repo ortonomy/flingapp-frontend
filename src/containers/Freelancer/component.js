@@ -41,7 +41,7 @@ class Freelancer extends Component {
 
   render() {
     return (
-      <div>
+      <div className={freelancer.FreelancerRoot} >
         <NavBar />
         <div className={freelancer.Freelancer}>
         <Sidebar />
