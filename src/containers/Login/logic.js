@@ -21,7 +21,7 @@ export const registerLogic = createLogic(
       }
     },
     process: ({ action }, dispatch, done) => {
-      API.Axios('POST', '/register', API.generateRegisterQuery(action.payload), null)
+      API.Axios('POST', '/graphql', API.generateRegisterQuery(action.payload), null)
       .then ( data => {
         Debug.log('[action:process:remoteAPI:success] of REGISTER', data);
         dispatch(actions.registerSuccess({ data: data, login: { email: action.payload.email, password: action.payload.password }}));
