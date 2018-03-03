@@ -1,9 +1,6 @@
 // basic react imports
 import React, { Component }from 'react';
 
-// library imports
-import { connect } from 'react-redux';
-
 // component dependencies
 import LandingNavItems from './LandingNavItems';
 
@@ -13,19 +10,11 @@ import styles from './LandingNav.module.css';
 // assets
 import WebTitle from '../../assets/images/web-title@svg.svg';
 
-@connect(
-  state => (
-    {
-      Login: state.Login
-    }
-  ),
-  null
-)
 class LandingNav extends Component {
   constructor(props) {
     super(props);
 
-    this.navItems = this.props.Login.loggedIn === true ? [
+    this.navItems = this.props.loggedIn === true ? [
       {
         href: '/main',
         text: `Go to app`
