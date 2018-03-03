@@ -12,7 +12,7 @@ import Activate from '../Activate';
 import Main from '../../components/Main/Main.js';
 import LogOutRedirect from '../Auth/LogOutRedirect';
 
-//debug 
+//debug
 import Debug from '../../utils/Debug';
 
 @connect(

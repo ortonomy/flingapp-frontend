@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 // component dependencies
-import FormInputAnimated from '../FormInputAnimated/FormInputAnimated';
+import FormInputAnimated from '../FormInputAnimated/';
 import FormButton from '../FormButton';
 import ErrorMessage from '../ErrorMessage';
 

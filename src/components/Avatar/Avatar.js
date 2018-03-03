@@ -1,14 +1,7 @@
 import React, { Component } from 'react';
 import styles from './Avatar.module.css';
-import { connect } from 'react-redux';
 import md5 from 'md5';
 
-@connect(
-  state => ({
-    state: state
-  }),
-  null
-)
 class Avatar extends Component {
   constructor(props) {
     super(props);
@@ -18,13 +11,13 @@ class Avatar extends Component {
   }
 
   getUserName() {
-    const lastName = this.props.state.Login.user.userLastName;
-    const firstName = this.props.state.Login.user.userFirstName;
+    const lastName = this.props.user.userLastName;
+    const firstName = this.props.user.userFirstName;
     return `${firstName} ${lastName}`;
   }
 
   getEmailHash() {
-    const email = this.props.state.Login.user.userEmail.trim();
+    const email = this.props.user.userEmail.trim();
     return md5(email);
   }
 

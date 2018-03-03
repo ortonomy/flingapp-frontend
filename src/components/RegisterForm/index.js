@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 // component dependencies
-import FormInputAnimated from '../FormInputAnimated/FormInputAnimated';
+import FormInputAnimated from '../FormInputAnimated';
 import FormButton from '../FormButton';
 import ErrorMessage from '../ErrorMessage';
 
@@ -135,7 +135,7 @@ class RegisterForm extends Component {
         <div className={styles.ErrorBox}>
           { this.props.Login.lastRegisterError && ( <ErrorMessage messages={[this.props.Login.lastRegisterError]} />)}
         </div>
-        <FormButton submit={this.submit} disabled={!this.state.validFirstName || !this.state.validLastName || !this.state.validEmail || !this.state.validPassword} text="REGISTER" icon="fa-rocket" /> 
+        <FormButton submit={this.submit} disabled={!this.state.validFirstName || !this.state.validLastName || !this.state.validEmail || !this.state.validPassword} text="REGISTER" icon="fa-rocket" />
       </form>
     );
     return f;

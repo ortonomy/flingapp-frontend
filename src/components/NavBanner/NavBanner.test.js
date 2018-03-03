@@ -1,8 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import NavBanner from './NavBanner';
+import Enzyme, { shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-15';
+import { NavBanner } from './NavBanner';
+
+Enzyme.configure({ adapter: new Adapter() });
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<NavBanner/>, div);
+  const wrapper = shallow(<NavBanner />);
+  expect(wrapper).toBeDefined();
 });

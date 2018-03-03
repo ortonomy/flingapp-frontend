@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Feedback from './Feedback';
+import RegisterForm from '../RegisterForm';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Feedback/>, div);
+  ReactDOM.render(<RegisterForm/>, div);
 });

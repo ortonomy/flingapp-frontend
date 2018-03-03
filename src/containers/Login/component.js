@@ -16,9 +16,9 @@ import styles from './Login.module.css';
 
 // copy and assets
 import logo from '../../assets/images/full_title_compact_trans@svg.svg';
-import { LoginFooter as LoginFooterCopy } from '../../assets/copy/Login'; 
+import { LoginFooter as LoginFooterCopy } from '../../assets/copy/Login';
 
-//debug 
+//debug
 import Debug from '../../utils/Debug';
 
 // actions
@@ -59,7 +59,7 @@ class Login extends Component {
             <div className={styles.Image}>
               <Link to="/"><img src={logo} alt="Fling" /></Link>
             </div>
-            <LoginNav 
+            <LoginNav
                 path={this.props.location.pathname}
                 submit={this.handleData}
             />
