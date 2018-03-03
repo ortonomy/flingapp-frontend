@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Col, Row } from 'react-bootstrap';
-import Tag from '../Tag/Tag'
+import Tag from '../Tag'
 import uuid from 'uuid/v4'
 import table from './InfoTable.module.css';
 

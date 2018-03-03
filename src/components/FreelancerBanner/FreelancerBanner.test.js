@@ -1,8 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import FreelancerBanner from './FreelancerBanner';
+import Enzyme, { shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-15';
+import FreelancerBanner from '../FreelancerBanner';
+
+Enzyme.configure({ adapter: new Adapter() });
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<FreelancerBanner/>, div);
+  const wrapper = shallow(<FreelancerBanner />);
+  expect(wrapper).toBeDefined();
 });

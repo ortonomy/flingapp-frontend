@@ -8,7 +8,7 @@ import { bindActionCreators } from 'redux';
 
 // component dependencies
 import isLoggedInRedirect from '../Auth/isLoggedInRedirect';
-import LoginNav from '../../components/LoginNav/LoginNav';
+import LoginNav from '../../components/LoginNav';
 import LoginFooter from '../../components/LoginFooter';
 
 // styles

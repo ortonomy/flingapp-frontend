@@ -1,8 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import InfoTable from './InfoTable';
+import Enzyme, { shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-15';
+import InfoTable from '../InfoTable';
+
+Enzyme.configure({ adapter: new Adapter() });
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<InfoTable/>, div);
+  const wrapper = shallow(<InfoTable />);
+  expect(wrapper).toBeDefined();
 });

@@ -1,8 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import NavMenu from './NavMenu';
+import Enzyme, { shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-15';
+import NavMenu from '../NavMenu';
+
+Enzyme.configure({ adapter: new Adapter() });
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<NavMenu/>, div);
+  const wrapper = shallow(<NavMenu />);
+  expect(wrapper).toBeDefined();
 });

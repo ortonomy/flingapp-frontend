@@ -1,8 +1,8 @@
 // basic react
 import React, { Component } from 'react';
-import Sidebar from '../../components/Sidebar/Sidebar.js';
-import FreelancerBody from '../../components/FreelancerBody/FreelancerBody';
-import NavBar from '../../components/NavBar/NavBar'
+import Sidebar from '../../components/Sidebar';
+import FreelancerBody from '../../components/FreelancerBody';
+import NavBar from '../../components/NavBar'
 
 // styles
 import freelancer from './Freelancer.module.css';
@@ -42,7 +42,7 @@ class Freelancer extends Component {
   render() {
     return (
       <div>
-        <NavBar />
+        <NavBar user={this.props.state.Login.user} />
         <div className={freelancer.Freelancer}>
         <Sidebar />
         <FreelancerBody freelancer={this.props.state.Freelancer.current_freelancer}

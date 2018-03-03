@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import InfoTable from '../InfoTable/InfoTable';
+import InfoTable from '../InfoTable';
 import info from './FreelancerInfo.module.css';
 
 class FreelancerInfo extends Component {
@@ -19,7 +19,7 @@ class FreelancerInfo extends Component {
       'documents': ['freelancer_assessment.doc']
     }
     const experience = {}
-    
+
     return (
       <div className={info.FreelancerInfo}>
         <InfoTable title='Personal Information' info={personalInfo}/>

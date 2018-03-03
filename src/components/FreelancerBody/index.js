@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import FreelancerBanner from '../FreelancerBanner/FreelancerBanner';
-import FreelancerInfo from '../FreelancerInfo/FreelancerInfo';
+import FreelancerBanner from '../FreelancerBanner';
+import FreelancerInfo from '../FreelancerInfo';
 import body from './FreelancerBody.module.css';
 
 class FreelancerBody extends Component {

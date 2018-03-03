@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import RecentItem from '../RecentItem/RecentItem';
+import RecentItem from '../RecentItem';
 import recent from './Recent.module.css';
 import sidebar from '../Sidebar/Sidebar.module.css';
 

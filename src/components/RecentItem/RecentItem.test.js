@@ -1,8 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import RecentItem from './RecentItem';
+import Enzyme, { shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-15';
+import RecentItem from '../RecentItem';
+
+Enzyme.configure({ adapter: new Adapter() });
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<RecentItem/>, div);
+  const wrapper = shallow(<RecentItem />);
+  expect(wrapper).toBeDefined();
 });

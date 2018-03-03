@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import Search from '../Search/Search'
-import Create from '../Create/Create'
-import Recent from '../Recent/Recent'
+import Search from '../Search'
+import Create from '../Create'
+import Recent from '../Recent'
 import styles from './Sidebar.module.css';
-
 
 class Sidebar extends Component {
   render() {

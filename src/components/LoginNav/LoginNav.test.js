@@ -1,8 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import LoginNav from './LoginNav';
+import Enzyme, { shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-15';
+import LoginNav from '../LoginNav';
+
+Enzyme.configure({ adapter: new Adapter() });
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<LoginNav/>, div);
+  const wrapper = shallow(<LoginNav />);
+  expect(wrapper).toBeDefined();
 });

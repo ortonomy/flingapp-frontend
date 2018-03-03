@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Avatar from './Avatar';
+import Avatar from '../Avatar';
 
 const user = {
   userFirstName: "example",

@@ -6,7 +6,7 @@ import Debug from '../../utils/Debug';
 
 // dependent components
 import LoginTab from './components/LoginTab';
-import LoginForm from '../LoginForm/LoginForm';
+import LoginForm from '../LoginForm';
 import RegisterForm  from '../RegisterForm';
 import Activation from '../Activation';
 import Loader from '../Loader';
@@ -26,13 +26,13 @@ class LoginNav extends Component {
         <div className={styles.LoginTabs}>
           <LoginTab
             text="Log in"
-            path="/login" 
-            active={path === '/login' ? true : false} 
+            path="/login"
+            active={path === '/login' ? true : false}
           />
-          <LoginTab 
+          <LoginTab
             text="Register"
             path="/register"
-            active={path === '/register' ? true : false } 
+            active={path === '/register' ? true : false }
           />
         </div>
         <div className={styles.Body}>

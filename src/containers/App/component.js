@@ -9,7 +9,7 @@ import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import { Login } from '../Login';
 import { Landing } from '../Landing';
 import Activate from '../Activate';
-import Main from '../../components/Main/Main.js';
+import Main from '../../components/Main/';
 import LogOutRedirect from '../Auth/LogOutRedirect';
 import { Freelancer } from '../Freelancer';
 
