@@ -11,6 +11,7 @@ import { Landing } from '../Landing';
 import Activate from '../Activate';
 import Main from '../../components/Main/Main.js';
 import LogOutRedirect from '../Auth/LogOutRedirect';
+import { Freelancer } from '../Freelancer';
 
 //debug
 import Debug from '../../utils/Debug';
@@ -33,6 +34,7 @@ class App extends Component {
           <Route path="/register" component={Login}/>
           <Route path="/activation" component={Login}/>
           <Route path="/logout" component={LogOutRedirect}/>
+          <Route path='/freelancer/:id' component={Freelancer}/>
           <Route path="/" component={Landing}/>
         </Switch>
       </Router>
