@@ -98,8 +98,6 @@ class API {
             firstName
             lastName
             email
-            accountSelector
-            accountVerifier
             accountActivated
           }
         }
