@@ -1,6 +1,7 @@
 // initial state
 const initialState = {
-  current_freelancer: {}
+  current_freelancer: {},
+  loading_freelancer: false
 }
 
 export default function FreelancerReducer(state = initialState, action) {

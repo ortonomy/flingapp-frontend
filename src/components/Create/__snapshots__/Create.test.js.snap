@@ -1,0 +1,225 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Create />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className={undefined}
+>
+          <i
+                    className="fa fa-plus-circle"
+          />
+          <span>
+                    Create
+          </span>
+</div>,
+        <div
+          className={undefined}
+>
+          New Freelancer
+</div>,
+        <div
+          className={undefined}
+>
+          New Project
+</div>,
+      ],
+      "className": undefined,
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <i
+              className="fa fa-plus-circle"
+/>,
+            <span>
+              Create
+</span>,
+          ],
+          "className": undefined,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "fa fa-plus-circle",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "i",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Create",
+            },
+            "ref": null,
+            "rendered": "Create",
+            "type": "span",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "New Freelancer",
+          "className": undefined,
+        },
+        "ref": null,
+        "rendered": "New Freelancer",
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "New Project",
+          "className": undefined,
+        },
+        "ref": null,
+        "rendered": "New Project",
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className={undefined}
+>
+            <i
+                        className="fa fa-plus-circle"
+            />
+            <span>
+                        Create
+            </span>
+</div>,
+          <div
+            className={undefined}
+>
+            New Freelancer
+</div>,
+          <div
+            className={undefined}
+>
+            New Project
+</div>,
+        ],
+        "className": undefined,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <i
+                className="fa fa-plus-circle"
+/>,
+              <span>
+                Create
+</span>,
+            ],
+            "className": undefined,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "fa fa-plus-circle",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "i",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Create",
+              },
+              "ref": null,
+              "rendered": "Create",
+              "type": "span",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "New Freelancer",
+            "className": undefined,
+          },
+          "ref": null,
+          "rendered": "New Freelancer",
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "New Project",
+            "className": undefined,
+          },
+          "ref": null,
+          "rendered": "New Project",
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactFifteenAdapter {
+      "options": Object {
+        "supportPrevContextArgumentOfComponentDidUpdate": true,
+      },
+    },
+  },
+}
+`;

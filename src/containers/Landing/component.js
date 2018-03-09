@@ -20,7 +20,7 @@ class Landing extends Component {
   render () {
     return (
       <div>
-        <LandingNav loggedIn={this.props.state.Login.loggedIn} />
+        <LandingNav loggedIn={this.props.Login.loggedIn} />
         <LandingHero />
       </div>
     );

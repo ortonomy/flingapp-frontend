@@ -1,11 +1,29 @@
 import React from 'react';
-import Enzyme, { shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-15';
 import LoginForm from '../LoginForm';
+import configureStore from 'redux-mock-store'
+import ErrorMessage from '../ErrorMessage';
+import { BrowserRouter } from 'react-router-dom';
 
-Enzyme.configure({ adapter: new Adapter() });
+const oneErrorState   = { Login: { lastLoginError: ['one error'] }};
+const noErrorState    = { Login: { lastLoginError: null }}
+
+const mockStore = configureStore();
+let store;
 
 it('renders without crashing', () => {
-  const wrapper = shallow(<LoginForm />);
-  expect(wrapper).toBeDefined();
+  store = mockStore(noErrorState)
+  const wrapper = shallow(<LoginForm store={store} />);
+  expect(wrapper).toMatchSnapshot();
+});
+
+it('does not render an error message if no error is given', () => {
+  store = mockStore(noErrorState)
+  const wrapper = mount(<BrowserRouter><LoginForm store={store} /></BrowserRouter>)
+  expect(wrapper.find(ErrorMessage)).toHaveLength(0);
+});
+
+it('renders an error message if an error is returned from the store', () => {
+  store = mockStore(oneErrorState)
+  const wrapper = mount(<BrowserRouter><LoginForm store={store} /></BrowserRouter>);
+  expect(wrapper.find(ErrorMessage)).toHaveLength(1);
 });

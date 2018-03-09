@@ -1,0 +1,302 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <LoginFooter
+    links={
+        Array [
+            Object {
+              "route": "/terms",
+              "text": "Terms & conditions",
+            },
+            Object {
+              "route": "/privacy",
+              "text": "Privacy policy",
+            },
+          ]
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Link
+          replace={false}
+          to="/terms"
+>
+          <span>
+                     
+                    Terms & conditions
+                     
+          </span>
+          <span>
+                     | 
+          </span>
+</Link>,
+        <Link
+          replace={false}
+          to="/privacy"
+>
+          <span>
+                     
+                    Privacy policy
+                     
+          </span>
+          
+</Link>,
+      ],
+      "className": undefined,
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "0",
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <span>
+               
+              Terms & conditions
+               
+</span>,
+            <span>
+               | 
+</span>,
+          ],
+          "replace": false,
+          "to": "/terms",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                " ",
+                "Terms & conditions",
+                " ",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              " ",
+              "Terms & conditions",
+              " ",
+            ],
+            "type": "span",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": " | ",
+            },
+            "ref": null,
+            "rendered": " | ",
+            "type": "span",
+          },
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "1",
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <span>
+               
+              Privacy policy
+               
+</span>,
+            "",
+          ],
+          "replace": false,
+          "to": "/privacy",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                " ",
+                "Privacy policy",
+                " ",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              " ",
+              "Privacy policy",
+              " ",
+            ],
+            "type": "span",
+          },
+          "",
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Link
+            replace={false}
+            to="/terms"
+>
+            <span>
+                         
+                        Terms & conditions
+                         
+            </span>
+            <span>
+                         | 
+            </span>
+</Link>,
+          <Link
+            replace={false}
+            to="/privacy"
+>
+            <span>
+                         
+                        Privacy policy
+                         
+            </span>
+            
+</Link>,
+        ],
+        "className": undefined,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "0",
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <span>
+                 
+                Terms & conditions
+                 
+</span>,
+              <span>
+                 | 
+</span>,
+            ],
+            "replace": false,
+            "to": "/terms",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  " ",
+                  "Terms & conditions",
+                  " ",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                " ",
+                "Terms & conditions",
+                " ",
+              ],
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": " | ",
+              },
+              "ref": null,
+              "rendered": " | ",
+              "type": "span",
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "1",
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <span>
+                 
+                Privacy policy
+                 
+</span>,
+              "",
+            ],
+            "replace": false,
+            "to": "/privacy",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  " ",
+                  "Privacy policy",
+                  " ",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                " ",
+                "Privacy policy",
+                " ",
+              ],
+              "type": "span",
+            },
+            "",
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactFifteenAdapter {
+      "options": Object {
+        "supportPrevContextArgumentOfComponentDidUpdate": true,
+      },
+    },
+  },
+}
+`;

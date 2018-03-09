@@ -1,11 +1,18 @@
 import React from 'react';
-import Enzyme, { shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-15';
 import RegisterForm from '../RegisterForm';
+import configureStore from 'redux-mock-store'
 
-Enzyme.configure({ adapter: new Adapter() });
+const initialState = { lastRegisterError: null };
+
+const mockStore = configureStore();
+let store;
+
+beforeEach(() => {
+  store = mockStore(initialState)
+ })
+
 
 it('renders without crashing', () => {
-  const wrapper = shallow(<RegisterForm />);
-  expect(wrapper).toBeDefined();
+  const wrapper = shallow(<RegisterForm store={store} />);
+  expect(wrapper).toMatchSnapshot();
 });

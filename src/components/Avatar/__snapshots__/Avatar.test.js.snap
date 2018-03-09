@@ -1,0 +1,159 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Avatar
+    user={
+        Object {
+            "userEmail": "example@test.com",
+            "userFirstName": "example",
+            "userLastName": "user",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className={undefined}
+>
+          example user
+</div>,
+        <div
+          className={undefined}
+/>,
+        <img
+          alt="gravatar"
+          className={undefined}
+          src="https://www.gravatar.com/avatar/29e3f53ee49fae541ee0f48fb712c231"
+/>,
+      ],
+      "className": undefined,
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "example user",
+          "className": undefined,
+        },
+        "ref": null,
+        "rendered": "example user",
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": undefined,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "alt": "gravatar",
+          "className": undefined,
+          "src": "https://www.gravatar.com/avatar/29e3f53ee49fae541ee0f48fb712c231",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "img",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className={undefined}
+>
+            example user
+</div>,
+          <div
+            className={undefined}
+/>,
+          <img
+            alt="gravatar"
+            className={undefined}
+            src="https://www.gravatar.com/avatar/29e3f53ee49fae541ee0f48fb712c231"
+/>,
+        ],
+        "className": undefined,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "example user",
+            "className": undefined,
+          },
+          "ref": null,
+          "rendered": "example user",
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": undefined,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "alt": "gravatar",
+            "className": undefined,
+            "src": "https://www.gravatar.com/avatar/29e3f53ee49fae541ee0f48fb712c231",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactFifteenAdapter {
+      "options": Object {
+        "supportPrevContextArgumentOfComponentDidUpdate": true,
+      },
+    },
+  },
+}
+`;

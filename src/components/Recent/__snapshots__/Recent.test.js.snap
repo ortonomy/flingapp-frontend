@@ -1,0 +1,661 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Recent />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className={undefined}
+>
+          <i
+                    className="fa fa-eye"
+          />
+          <span>
+                    Recently Viewed
+          </span>
+</div>,
+        <div
+          className={undefined}
+>
+          <i
+                    aria-hidden="true"
+                    className="fa fa-users"
+          />
+          <span>
+                    Freelancers
+          </span>
+          <RecentItem
+                    displayText="Jorge Brock"
+                    icon="user"
+                    linkTarget="freelancer/101"
+          />
+          <RecentItem
+                    displayText="Lettie Hicks"
+                    icon="user"
+                    linkTarget="freelancer/102"
+          />
+          <RecentItem
+                    displayText="Winifred Summers"
+                    icon="user"
+                    linkTarget="reelancer/103"
+          />
+</div>,
+        <div
+          className={undefined}
+>
+          <i
+                    aria-hidden="true"
+                    className="fa fa-sticky-note"
+          />
+          <span>
+                    Projects
+          </span>
+          <RecentItem
+                    displayText="DLA General English"
+                    icon="folder-o"
+                    linkTarget="project/101"
+          />
+          <RecentItem
+                    displayText="BE Update 2017"
+                    icon="folder-o"
+                    linkTarget="project/102"
+          />
+          <RecentItem
+                    displayText="Wordlists and Images"
+                    icon="folder-o"
+                    linkTarget="project/103"
+          />
+</div>,
+      ],
+      "className": undefined,
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <i
+              className="fa fa-eye"
+/>,
+            <span>
+              Recently Viewed
+</span>,
+          ],
+          "className": undefined,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "fa fa-eye",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "i",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Recently Viewed",
+            },
+            "ref": null,
+            "rendered": "Recently Viewed",
+            "type": "span",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <i
+              aria-hidden="true"
+              className="fa fa-users"
+/>,
+            <span>
+              Freelancers
+</span>,
+            Array [
+              <RecentItem
+                displayText="Jorge Brock"
+                icon="user"
+                linkTarget="freelancer/101"
+/>,
+              <RecentItem
+                displayText="Lettie Hicks"
+                icon="user"
+                linkTarget="freelancer/102"
+/>,
+              <RecentItem
+                displayText="Winifred Summers"
+                icon="user"
+                linkTarget="reelancer/103"
+/>,
+            ],
+          ],
+          "className": undefined,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "aria-hidden": "true",
+              "className": "fa fa-users",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "i",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Freelancers",
+            },
+            "ref": null,
+            "rendered": "Freelancers",
+            "type": "span",
+          },
+          Object {
+            "instance": null,
+            "key": "Jorge Brock",
+            "nodeType": "function",
+            "props": Object {
+              "displayText": "Jorge Brock",
+              "icon": "user",
+              "linkTarget": "freelancer/101",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": "Lettie Hicks",
+            "nodeType": "function",
+            "props": Object {
+              "displayText": "Lettie Hicks",
+              "icon": "user",
+              "linkTarget": "freelancer/102",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": "Winifred Summers",
+            "nodeType": "function",
+            "props": Object {
+              "displayText": "Winifred Summers",
+              "icon": "user",
+              "linkTarget": "reelancer/103",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <i
+              aria-hidden="true"
+              className="fa fa-sticky-note"
+/>,
+            <span>
+              Projects
+</span>,
+            Array [
+              <RecentItem
+                displayText="DLA General English"
+                icon="folder-o"
+                linkTarget="project/101"
+/>,
+              <RecentItem
+                displayText="BE Update 2017"
+                icon="folder-o"
+                linkTarget="project/102"
+/>,
+              <RecentItem
+                displayText="Wordlists and Images"
+                icon="folder-o"
+                linkTarget="project/103"
+/>,
+            ],
+          ],
+          "className": undefined,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "aria-hidden": "true",
+              "className": "fa fa-sticky-note",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "i",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Projects",
+            },
+            "ref": null,
+            "rendered": "Projects",
+            "type": "span",
+          },
+          Object {
+            "instance": null,
+            "key": "DLA General English",
+            "nodeType": "function",
+            "props": Object {
+              "displayText": "DLA General English",
+              "icon": "folder-o",
+              "linkTarget": "project/101",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": "BE Update 2017",
+            "nodeType": "function",
+            "props": Object {
+              "displayText": "BE Update 2017",
+              "icon": "folder-o",
+              "linkTarget": "project/102",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": "Wordlists and Images",
+            "nodeType": "function",
+            "props": Object {
+              "displayText": "Wordlists and Images",
+              "icon": "folder-o",
+              "linkTarget": "project/103",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className={undefined}
+>
+            <i
+                        className="fa fa-eye"
+            />
+            <span>
+                        Recently Viewed
+            </span>
+</div>,
+          <div
+            className={undefined}
+>
+            <i
+                        aria-hidden="true"
+                        className="fa fa-users"
+            />
+            <span>
+                        Freelancers
+            </span>
+            <RecentItem
+                        displayText="Jorge Brock"
+                        icon="user"
+                        linkTarget="freelancer/101"
+            />
+            <RecentItem
+                        displayText="Lettie Hicks"
+                        icon="user"
+                        linkTarget="freelancer/102"
+            />
+            <RecentItem
+                        displayText="Winifred Summers"
+                        icon="user"
+                        linkTarget="reelancer/103"
+            />
+</div>,
+          <div
+            className={undefined}
+>
+            <i
+                        aria-hidden="true"
+                        className="fa fa-sticky-note"
+            />
+            <span>
+                        Projects
+            </span>
+            <RecentItem
+                        displayText="DLA General English"
+                        icon="folder-o"
+                        linkTarget="project/101"
+            />
+            <RecentItem
+                        displayText="BE Update 2017"
+                        icon="folder-o"
+                        linkTarget="project/102"
+            />
+            <RecentItem
+                        displayText="Wordlists and Images"
+                        icon="folder-o"
+                        linkTarget="project/103"
+            />
+</div>,
+        ],
+        "className": undefined,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <i
+                className="fa fa-eye"
+/>,
+              <span>
+                Recently Viewed
+</span>,
+            ],
+            "className": undefined,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "fa fa-eye",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "i",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Recently Viewed",
+              },
+              "ref": null,
+              "rendered": "Recently Viewed",
+              "type": "span",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <i
+                aria-hidden="true"
+                className="fa fa-users"
+/>,
+              <span>
+                Freelancers
+</span>,
+              Array [
+                <RecentItem
+                  displayText="Jorge Brock"
+                  icon="user"
+                  linkTarget="freelancer/101"
+/>,
+                <RecentItem
+                  displayText="Lettie Hicks"
+                  icon="user"
+                  linkTarget="freelancer/102"
+/>,
+                <RecentItem
+                  displayText="Winifred Summers"
+                  icon="user"
+                  linkTarget="reelancer/103"
+/>,
+              ],
+            ],
+            "className": undefined,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "aria-hidden": "true",
+                "className": "fa fa-users",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "i",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Freelancers",
+              },
+              "ref": null,
+              "rendered": "Freelancers",
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": "Jorge Brock",
+              "nodeType": "function",
+              "props": Object {
+                "displayText": "Jorge Brock",
+                "icon": "user",
+                "linkTarget": "freelancer/101",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": "Lettie Hicks",
+              "nodeType": "function",
+              "props": Object {
+                "displayText": "Lettie Hicks",
+                "icon": "user",
+                "linkTarget": "freelancer/102",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": "Winifred Summers",
+              "nodeType": "function",
+              "props": Object {
+                "displayText": "Winifred Summers",
+                "icon": "user",
+                "linkTarget": "reelancer/103",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <i
+                aria-hidden="true"
+                className="fa fa-sticky-note"
+/>,
+              <span>
+                Projects
+</span>,
+              Array [
+                <RecentItem
+                  displayText="DLA General English"
+                  icon="folder-o"
+                  linkTarget="project/101"
+/>,
+                <RecentItem
+                  displayText="BE Update 2017"
+                  icon="folder-o"
+                  linkTarget="project/102"
+/>,
+                <RecentItem
+                  displayText="Wordlists and Images"
+                  icon="folder-o"
+                  linkTarget="project/103"
+/>,
+              ],
+            ],
+            "className": undefined,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "aria-hidden": "true",
+                "className": "fa fa-sticky-note",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "i",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Projects",
+              },
+              "ref": null,
+              "rendered": "Projects",
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": "DLA General English",
+              "nodeType": "function",
+              "props": Object {
+                "displayText": "DLA General English",
+                "icon": "folder-o",
+                "linkTarget": "project/101",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": "BE Update 2017",
+              "nodeType": "function",
+              "props": Object {
+                "displayText": "BE Update 2017",
+                "icon": "folder-o",
+                "linkTarget": "project/102",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": "Wordlists and Images",
+              "nodeType": "function",
+              "props": Object {
+                "displayText": "Wordlists and Images",
+                "icon": "folder-o",
+                "linkTarget": "project/103",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactFifteenAdapter {
+      "options": Object {
+        "supportPrevContextArgumentOfComponentDidUpdate": true,
+      },
+    },
+  },
+}
+`;
