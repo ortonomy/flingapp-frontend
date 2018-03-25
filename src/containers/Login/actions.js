@@ -71,7 +71,7 @@ export const registerSuccess = result => (
 
 export const registerFail = err => (
   {
-    type: REGISTER_FAIL, 
+    type: REGISTER_FAIL,
     payload: err,
     error: true
   }
@@ -93,7 +93,7 @@ export const activateSuccess = user => (
 
 export const activateFail = err => (
   {
-    type: ACTIVATE_FAIL, 
+    type: ACTIVATE_FAIL,
     payload: err,
     error: true
   }
@@ -151,4 +151,3 @@ export const actions = {
   setErrors,
   logOut
 }
-
